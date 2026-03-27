@@ -189,12 +189,12 @@
 
     /* NAV */
     .tool-nav{
-      margin-bottom:18px;
+      margin-bottom:20px;
     }
 
     .tool-suite{
-      margin-bottom:12px;
-      padding:14px 15px;
+      margin-bottom:14px;
+      padding:15px 16px;
       border-radius:22px;
       border:1px solid rgba(125,177,255,.16);
       background:
@@ -232,17 +232,20 @@
       margin:7px 0 0;
       color:var(--muted);
       font-size:.9rem;
-      line-height:1.55;
+      line-height:1.58;
     }
 
     .tool-nav-scroll{
       display:flex;
       flex-wrap:wrap;
-      gap:10px;
-      padding:2px 2px 4px;
+      gap:12px;
+      padding:2px 2px 6px;
     }
     .tool-nav-scroll::-webkit-scrollbar{display:none}
     .tool-tab{
+      display:flex;
+      align-items:center;
+      justify-content:center;
       flex:0 0 calc((100% - 40px) / 5);
       min-width:0;
       min-height:44px;
@@ -255,6 +258,8 @@
       font-weight:800;
       line-height:1.2;
       text-align:center;
+      text-decoration:none;
+      cursor:pointer;
       transition:.18s ease;
     }
     .tool-tab:hover{
@@ -267,12 +272,17 @@
       background:linear-gradient(180deg, rgba(242,198,109,.18), rgba(242,198,109,.08));
       box-shadow:0 10px 24px rgba(242,198,109,.12);
     }
+    .tool-tab:focus-visible{
+      outline:2px solid var(--line-gold);
+      outline-offset:2px;
+      border-color:var(--line-gold);
+    }
 
     /* MODE ZONE */
     .mode-zone{
       display:grid;
-      gap:14px;
-      margin-bottom:18px;
+      gap:16px;
+      margin-bottom:20px;
     }
 
     .mode-grid{
@@ -386,8 +396,8 @@
 
     .toolkit-import-card{
       display:grid;
-      gap:14px;
-      padding:18px;
+      gap:15px;
+      padding:19px;
       border-radius:22px;
       border:1px solid rgba(125,177,255,.22);
       background:
@@ -617,7 +627,7 @@
     .advance-toggle-text{
       color:var(--muted);
       font-size:.92rem;
-      line-height:1.55;
+      line-height:1.6;
     }
 
     /* CHIPS / SEGMENTS */
@@ -784,7 +794,7 @@
     .mini-stat-grid,
     .action-grid{
       display:grid;
-      gap:12px;
+      gap:14px;
     }
 
     .field-grid,
@@ -1369,7 +1379,7 @@
 
     /* FOOTER */
     .footer-actions{
-      padding:6px 0 0;
+      padding:8px 0 0;
     }
 
     .action-grid{
@@ -1383,10 +1393,26 @@
       font-size:.94rem;
       font-weight:900;
       transition:.2s ease;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      cursor:pointer;
     }
 
     .btn:hover{
       transform:translateY(-1px);
+    }
+    .btn:focus-visible{
+      outline:2px solid rgba(242,198,109,.48);
+      outline-offset:3px;
+      border-color:rgba(242,198,109,.46);
+    }
+    .btn:disabled{
+      opacity:.58;
+      cursor:not-allowed;
+      transform:none;
+      box-shadow:none;
     }
 
     .btn-secondary{
@@ -1404,19 +1430,27 @@
       color:#261a00;
       box-shadow:0 14px 28px rgba(242,198,109,.18);
     }
+    .btn-primary:hover{
+      box-shadow:0 16px 30px rgba(242,198,109,.22);
+    }
 
     .btn-ghost{
       background:transparent;
       color:var(--muted);
     }
+    .btn-ghost:hover{
+      border-color:rgba(244,102,102,.28);
+      color:#f4b7b7;
+      background:rgba(244,102,102,.05);
+    }
 
     .footer-note{
-      margin:14px 0 0;
+      margin:16px 0 0;
       text-align:center;
     }
 
     .footer-brand{
-      margin-top:6px;
+      margin-top:8px;
       text-align:center;
       color:var(--gold-2);
       font-size:.88rem;
@@ -1724,12 +1758,12 @@
       }
 
       .tool-nav{
-        margin-bottom:14px;
+        margin-bottom:15px;
       }
 
       .tool-suite{
-        margin-bottom:10px;
-        padding:11px 12px 12px;
+        margin-bottom:11px;
+        padding:12px 13px 13px;
         border-radius:18px;
       }
 
@@ -1747,11 +1781,11 @@
       .tool-suite-copy{
         margin-top:5px;
         font-size:.8rem;
-        line-height:1.42;
+        line-height:1.48;
       }
 
       .tool-nav-scroll{
-        gap:7px;
+        gap:8px;
       }
 
       .tool-tab{
@@ -1775,7 +1809,7 @@
       }
 
       .toolkit-import-card{
-        padding:16px;
+        padding:17px;
         border-radius:20px;
       }
 
@@ -1976,10 +2010,10 @@
 	            <span class="hero-trust-pill">No Sign-Up</span>
 	            <span class="hero-trust-pill">Saved in Your Browser</span>
 	            <span class="hero-trust-pill">Instant Auto-Calc</span>
-	            <span class="hero-trust-pill">1-Click PNG &amp; PDF</span>
+	            <span class="hero-trust-pill">PNG &amp; PDF Export</span>
 	          </div>
 	          <p class="hero-trust-line">
-	            Tap presets for a fast setup, add custom values only when needed, and export your plan in one click.
+	            Tap presets for a faster setup, keep custom values optional, and export a premium planner snapshot in one click.
 	          </p>
 	        </div>
 	      </header>
@@ -1987,16 +2021,16 @@
 	      <!-- TOOL NAV -->
 	      <nav class="tool-nav" aria-label="Tool Navigation">
 	        <div class="tool-suite" aria-label="Toolkit Identity">
-	          <span class="tool-suite-kicker">Connected Suite</span>
+	          <span class="tool-suite-kicker">Connected Toolkit</span>
 	          <p class="tool-suite-title">Freelance Calculator Toolkit</p>
 	          <p class="tool-suite-copy">5 connected tools for pricing, fees, tax planning, income goals, and budgeting.</p>
 	        </div>
 	        <div class="tool-nav-scroll">
-	          <button class="tool-tab" data-tool="hourly_rate" type="button">Hourly Rate</button>
-	          <button class="tool-tab" data-tool="platform_fee" type="button">Platform Fees</button>
-          <button class="tool-tab" data-tool="tax_estimator" type="button">Tax Estimator</button>
-          <button class="tool-tab active" data-tool="income_goal" type="button" aria-current="page">Income Goal</button>
-          <button class="tool-tab" data-tool="budget_planner" type="button">Budget Planner</button>
+	          <a class="tool-tab" data-tool="hourly_rate" href="index.html">Hourly Rate</a>
+	          <a class="tool-tab" data-tool="platform_fee" href="platform-fee-calculator.html">Platform Fees</a>
+          <a class="tool-tab" data-tool="tax_estimator" href="tax-estimator.html">Tax Estimator</a>
+          <a class="tool-tab active" data-tool="income_goal" href="income-goal-planner.html" aria-current="page">Income Goal</a>
+          <a class="tool-tab" data-tool="budget_planner" href="budget-planner.html">Budget Planner</a>
         </div>
       </nav>
 
@@ -2915,13 +2949,13 @@
       <!-- FOOTER -->
       <footer class="footer-actions">
         <div class="action-grid">
-          <button class="btn btn-secondary" type="button">Copy Summary</button>
-          <button class="btn btn-secondary" type="button">Share Card</button>
-          <button class="btn btn-primary" type="button">PDF Report</button>
-          <button class="btn btn-ghost" type="button">Reset</button>
+          <button class="btn btn-secondary" id="goalCopyBtn" type="button">Copy Summary</button>
+          <button class="btn btn-primary" id="goalPdfBtn" type="button">PDF Report</button>
+          <button class="btn btn-secondary" id="goalShareBtn" type="button">Image / Share</button>
+          <button class="btn btn-ghost" id="goalResetBtn" type="button">Reset</button>
         </div>
 
-        <p class="footer-note">Estimates only · Not financial or tax advice</p>
+        <p class="footer-note">Estimates only for planning · Not financial or tax advice</p>
         <div class="footer-brand">usafreelancecalculator.com</div>
       </footer>
     </div>
@@ -3300,11 +3334,10 @@
         ui.benchInsightStatus = document.querySelector('.benchmark-insight-card .status-chip');
         ui.pipeInsightValues = [...document.querySelectorAll('.pipeline-insight-card .stat-list .value')];
 
-        ui.footerButtons = [...document.querySelectorAll('.footer-actions .btn')];
-        ui.copyBtn = ui.footerButtons[0];
-        ui.shareBtn = ui.footerButtons[1];
-        ui.pdfBtn = ui.footerButtons[2];
-        ui.resetBtn = ui.footerButtons[3];
+        ui.copyBtn = document.getElementById('goalCopyBtn');
+        ui.pdfBtn = document.getElementById('goalPdfBtn');
+        ui.shareBtn = document.getElementById('goalShareBtn');
+        ui.resetBtn = document.getElementById('goalResetBtn');
         ui.budgetBackBtn = document.getElementById('budgetBackBtn');
         ui.budgetNextBtn = document.getElementById('budgetNextBtn');
         ui.budgetNextMeta = document.getElementById('budgetNextMeta');
@@ -3352,12 +3385,18 @@
         });
 
 	        ui.toolTabs.filter(btn => !btn.classList.contains('active')).forEach(btn => {
-	          btn.addEventListener('click', () => {
+	          btn.addEventListener('click', event => {
 	            const toolId = btn.dataset.tool || '';
+            const fallbackHref = btn.getAttribute('href') || '';
+            if (fallbackHref) event.preventDefault();
 	            if (window.UFCToolkit && typeof window.UFCToolkit.goToTool === 'function' && toolId) {
 	              window.UFCToolkit.goToTool(toolId);
 	              return;
 	            }
+            if (fallbackHref) {
+              window.location.href = fallbackHref;
+              return;
+            }
 	            showInfoModal('Toolkit Preview', [
 	              'This planner is part of the Freelance Calculator Toolkit.',
 	              'Hourly Rate, Platform Fees, Tax Estimator, Income Goal, and Budget Planner are designed to work like one connected suite.'
@@ -3856,8 +3895,8 @@
         ui.budgetNextBtn.addEventListener('click', goNextToBudget);
 
 	        ui.copyBtn.addEventListener('click', copyPlan);
-	        ui.shareBtn.addEventListener('click', downloadShareCard);
 	        ui.pdfBtn.addEventListener('click', downloadPDF);
+	        ui.shareBtn.addEventListener('click', downloadShareCard);
 	        ui.resetBtn.addEventListener('click', () => {
 	          clearPersistedState();
 	          window.location.reload();
@@ -7876,8 +7915,8 @@
 
 	      async function downloadShareCard() {
 	        if (!window.html2canvas) {
-	          showInfoModal('Share Card Unavailable', [
-	            'The share-card export library could not be loaded right now.',
+	          showInfoModal('Image / Share Unavailable', [
+	            'The image/share export library could not be loaded right now.',
             'Try again after the page fully loads, or check whether a network/CDN blocker is preventing exports.'
 	          ]);
 	          return;
@@ -7885,7 +7924,7 @@
 
 	        const data = buildShareCardData();
 	        if (!data) {
-	          showInfoModal('Share Card Unavailable', [
+	          showInfoModal('Image / Share Unavailable', [
 	            'Add a valid goal and let the planner finish calculating before exporting.',
             'The PNG share card uses your latest planner result.'
 	          ]);
@@ -7930,7 +7969,7 @@
 	          flashButton(ui.shareBtn, 'Saved');
 	        } catch (error) {
 	          console.error(error);
-	          showInfoModal('Share Card Failed', [
+	          showInfoModal('Image / Share Failed', [
 	            'The premium PNG share card could not be generated right now.',
             'Try again after the planner finishes updating.'
 	          ]);

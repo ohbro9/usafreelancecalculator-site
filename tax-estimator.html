@@ -117,8 +117,8 @@
     overflow-x: hidden;
   }
   .toolkit-strip {
-    margin: 0 0 14px;
-    padding: 12px 12px 10px;
+    margin: 0 0 16px;
+    padding: 13px 13px 11px;
     border-radius: 22px;
     border: 1px solid rgba(255,255,255,.08);
     background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
@@ -134,7 +134,7 @@
   }
   .toolkit-strip-scroll {
     display: flex;
-    gap: 8px;
+    gap: 9px;
     overflow-x: auto;
     padding-bottom: 2px;
     scrollbar-width: none;
@@ -144,7 +144,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 40px;
+    min-height: 42px;
     padding: 0 14px;
     border-radius: 999px;
     border: 1px solid rgba(255,255,255,.08);
@@ -164,14 +164,19 @@
     border-color: rgba(239,198,74,.32);
     color: #17130a;
   }
+  .toolkit-pill:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+    border-color: var(--gold);
+  }
   @media(max-width: 640px) {
     .toolkit-strip {
-      padding: 12px 10px 10px;
+      padding: 13px 11px 11px;
     }
     .toolkit-strip-scroll {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
+      gap: 9px;
       overflow-x: visible;
       padding-bottom: 0;
     }
@@ -246,10 +251,10 @@
   }
   .header-cta-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
   .header-micro {
-    display: flex; flex-direction: column; align-items: center; gap: 4px;
-    margin-top: 6px;
+    display: flex; flex-direction: column; align-items: center; gap: 5px;
+    margin-top: 8px;
   }
-  .header-micro span { font-family: var(--font-ui); font-size: 12px; font-weight: 400; color: #8a95ad; line-height: 1.38; text-align: center; }
+  .header-micro span { font-family: var(--font-ui); font-size: 12px; font-weight: 400; color: #8a95ad; line-height: 1.42; text-align: center; }
   .header-micro span:first-child { color: #8a95ad; font-weight: 400; }
 
   /* ── RESULTS FLASH ── */
@@ -261,7 +266,7 @@
   .out-card.cta-flash { animation: resultFlash 0.85s ease forwards; }
 
   /* ── CARDS ── */
-  .card { background: linear-gradient(180deg, rgba(255,255,255,.022) 0%, rgba(255,255,255,.010) 100%), linear-gradient(180deg, #0d1626 0%, #101a2d 100%); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; margin-bottom: 13px; animation: fadeUp 0.45s ease both; box-shadow: 0 16px 42px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.032); overflow: hidden; }
+  .card { background: linear-gradient(180deg, rgba(255,255,255,.022) 0%, rgba(255,255,255,.010) 100%), linear-gradient(180deg, #0d1626 0%, #101a2d 100%); border: 1px solid var(--border); border-radius: var(--radius); padding: 19px; margin-bottom: 14px; animation: fadeUp 0.45s ease both; box-shadow: 0 16px 42px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.032); overflow: hidden; }
   .card + .card { animation-delay: 0.05s; }
   .card-label { display:flex; align-items:center; gap:7px; font-size: 11px; font-weight: 850; letter-spacing: .17em; text-transform: uppercase; color: #a5b0c3; margin-bottom: 15px; }
 
@@ -629,23 +634,26 @@
   }
 
   /* ── ACTIONS ── */
-  .action-row { display: grid; grid-template-columns: 86px 1fr; gap: 10px; margin-bottom: 10px; animation: fadeUp 0.7s ease both; }
+  .action-row { display: grid; grid-template-columns: 86px 1fr; gap: 10px; margin-bottom: 12px; animation: fadeUp 0.7s ease both; }
   .btn { border: none; border-radius: 16px; font-family: var(--font-ui); font-size: 13px; font-weight: 800; padding: 14px 12px; cursor: pointer; letter-spacing: -0.01em; transition: all 0.18s; display: flex; align-items: center; justify-content: center; gap: 6px; }
+  .btn:disabled { opacity: 0.58; cursor: not-allowed; transform: none; }
   .btn-reset { background: linear-gradient(180deg, rgba(255,255,255,.024), rgba(255,255,255,.012)); color: #cad4e6; border: 1px solid rgba(255,255,255,.08); }
   @media(hover:hover) and (pointer:fine) {
     .btn-reset:hover { border-color: var(--red); color: var(--red); }
   }
+  .btn-reset:focus-visible { outline: 2px solid rgba(255,107,107,.45); outline-offset: 3px; border-color: var(--red); }
   .btn-copy { background: linear-gradient(180deg,#f8da62 0%,#efc640 55%,#e8bb38 100%); color: #15120b; flex: 1; box-shadow: 0 14px 32px rgba(239,198,74,.14), inset 0 1px 0 rgba(255,255,255,.28); }
   @media(hover:hover) and (pointer:fine) {
     .btn-copy:hover { background: var(--gold2); }
   }
   .btn-copy:active { transform: scale(0.97); }
+  .btn-copy:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
   .btn-copy.copied    { background: var(--green); color: #0d0f14; }
   .btn-copy.copy-fail { background: var(--red); color: #fff; }
 
   /* ── CLEAR SAVED SETTINGS link ── */
   .clear-saved-row {
-    text-align: center; margin-top: 8px; margin-bottom: 10px;
+    text-align: center; margin-top: 9px; margin-bottom: 12px;
     animation: fadeUp 0.71s ease both;
   }
   .btn-clear-saved {
@@ -659,9 +667,10 @@
   @media(hover:hover) and (pointer:fine) {
     .btn-clear-saved:hover { color: var(--red); text-decoration-color: rgba(255,107,107,0.5); }
   }
+  .btn-clear-saved:focus-visible { outline: 2px solid rgba(255,107,107,.35); outline-offset: 3px; border-radius: 8px; }
 
   /* Download row */
-  .download-row { margin-bottom: 12px; animation: fadeUp 0.72s ease both; }
+  .download-row { margin-bottom: 14px; animation: fadeUp 0.72s ease both; }
   .btn-download {
     width: 100%;
     background: linear-gradient(180deg, rgba(255,255,255,.024), rgba(255,255,255,.012));
@@ -678,6 +687,7 @@
     .btn-download:hover { background: rgba(245,200,66,0.07); border-color: var(--gold); }
   }
   .btn-download:active { transform: scale(0.98); }
+  .btn-download:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
   .btn-download.loading { opacity: 0.6; cursor: wait; pointer-events: none; }
   .btn-download.success { color: var(--green); border-color: rgba(61,214,140,0.35); background: rgba(61,214,140,0.06); }
 
@@ -697,6 +707,7 @@
     .btn-pdf:hover { background: rgba(255,107,107,0.07); border-color: var(--red); }
   }
   .btn-pdf:active { transform: scale(0.98); }
+  .btn-pdf:focus-visible { outline: 2px solid rgba(255,107,107,.45); outline-offset: 3px; }
   .btn-pdf.success { color: var(--green); border-color: rgba(61,214,140,0.35); background: rgba(61,214,140,0.06); }
 
   .dl-icon { width: 16px; height: 16px; flex-shrink: 0; }
@@ -732,8 +743,8 @@
   .top-bracket-row strong { color: var(--muted2); font-weight: 500; }
 
   /* ── DISCLAIMER ── */
-  .disclaimer { font-size: 11px; color: #8995ac; text-align: center; line-height: 1.76; padding: 8px 10px 20px; max-width: 420px; margin: 15px auto 0; animation: fadeUp 0.8s ease both; }
-  .actions-shell { margin-top: 13px; }
+  .disclaimer { font-size: 11px; color: #8995ac; text-align: center; line-height: 1.72; padding: 10px 12px 22px; max-width: 420px; margin: 17px auto 0; animation: fadeUp 0.8s ease both; }
+  .actions-shell { margin-top: 15px; }
 
   /* ── BREAKDOWN TOTAL ROW ── */
   .bk-total-row {
@@ -1178,16 +1189,16 @@
     <h1>USA Freelance Tax <span class="h1-nowrap">Estimator <em>(2025–2026)</em></span></h1>
     <p>Estimate your take-home after federal, self-employment, and optional state taxes.</p>
     <div class="year-pill">
-      <button id="yr2025" onclick="setYear(2025)">2025</button>
-      <button id="yr2026" class="active" onclick="setYear(2026)">2026</button>
+      <button type="button" id="yr2025" onclick="setYear(2025)">2025</button>
+      <button type="button" id="yr2026" class="active" onclick="setYear(2026)">2026</button>
     </div>
     <div class="header-cta-wrap">
-      <button class="header-cta-btn" id="headerCtaBtn" aria-label="Scroll to your estimate">
+      <button type="button" class="header-cta-btn" id="headerCtaBtn" aria-label="Scroll to your estimate">
         View My Estimate ↓
       </button>
       <div class="header-micro">
-        <span>Instant estimates · No signup required</span>
-        <span>Updates live as you type — no button needed</span>
+        <span>Instant estimates · No Sign-Up</span>
+        <span>Saved in your browser · Updates live as you type</span>
         <span>Scrolls to estimate &amp; breakdown ↓</span>
       </div>
     </div>
@@ -1196,7 +1207,7 @@
   <nav class="toolkit-strip" aria-label="Toolkit navigation">
     <div class="toolkit-strip-label">Connected Toolkit</div>
     <div class="toolkit-strip-scroll">
-      <a class="toolkit-pill" href="/">Hourly Rate</a>
+      <a class="toolkit-pill" href="index.html">Hourly Rate</a>
       <a class="toolkit-pill" href="platform-fee-calculator.html">Platform Fees</a>
       <a class="toolkit-pill active" href="tax-estimator.html" aria-current="page">Tax Estimator</a>
       <a class="toolkit-pill" href="income-goal-planner.html">Income Goal</a>
@@ -1212,8 +1223,8 @@
     <div class="card-label">📊 Your Income</div>
     <div class="toggle-row">
       <div class="toggle-pill">
-        <button id="incAnnualBtn" class="active" onclick="setIncMode('annual')">Annual</button>
-        <button id="incMonthlyBtn" onclick="setIncMode('monthly')">Monthly</button>
+        <button type="button" id="incAnnualBtn" class="active" onclick="setIncMode('annual')">Annual</button>
+        <button type="button" id="incMonthlyBtn" onclick="setIncMode('monthly')">Monthly</button>
       </div>
       <span class="toggle-label" id="incModeLabel">per year</span>
     </div>
@@ -1229,23 +1240,23 @@
     <div class="input-error-note" id="incomeInputErr">⚠ Numbers only — e.g. 85000</div>
     <div class="import-banner" id="importBanner">
       <span class="import-banner-text" id="importBannerText"></span>
-      <button class="import-dismiss" id="importDismiss" aria-label="Dismiss import banner">×</button>
+      <button type="button" class="import-dismiss" id="importDismiss" aria-label="Dismiss import banner">×</button>
     </div>
     <div class="retire-warn" id="incHighWarn">⚠ Income over $2M entered — please double-check this is correct.</div>
     <div class="inc-mode-hint" id="incMonthlyHint">⟳ Monthly value × 12 — all tax estimates are annual totals.</div>
 
     <!-- FIX B: What-if buttons — IDs added so setIncMode() can update labels dynamically -->
     <div class="whatif-row">
-      <button class="whatif-btn" id="whatifMinus" onclick="adjustIncome(-10000)">&#x2212; $10k/yr</button>
-      <button class="whatif-btn" id="whatifPlus"  onclick="adjustIncome(+10000)">+ $10k/yr</button>
+      <button type="button" class="whatif-btn" id="whatifMinus" onclick="adjustIncome(-10000)">&#x2212; $10k/yr</button>
+      <button type="button" class="whatif-btn" id="whatifPlus"  onclick="adjustIncome(+10000)">+ $10k/yr</button>
     </div>
 
     <div style="margin-top:18px;">
       <div class="card-label" style="margin-bottom:10px;">🧾 Business Expenses</div>
       <div class="toggle-row">
         <div class="toggle-pill">
-          <button id="expDollarBtn" class="active" onclick="setExpMode('dollar')">$ Amount</button>
-          <button id="expPctBtn" onclick="setExpMode('pct')">% Percent</button>
+          <button type="button" id="expDollarBtn" class="active" onclick="setExpMode('dollar')">$ Amount</button>
+          <button type="button" id="expPctBtn" onclick="setExpMode('pct')">% Percent</button>
         </div>
       </div>
       <div class="input-wrap" id="expInputWrap">
@@ -1539,10 +1550,10 @@
       <div class="adv-field" style="margin-top:10px;">
         <div class="smart-chips" id="dependentChips"></div>
         <div class="stepper-wrap">
-          <button class="step-btn" onclick="stepKids(-1)" aria-label="Decrease">−</button>
+          <button type="button" class="step-btn" onclick="stepKids(-1)" aria-label="Decrease">−</button>
           <input type="number" id="dependentsInput" aria-label="Number of qualifying children for Child Tax Credit"
                  value="0" min="0" max="10" step="1" oninput="clampKids(); scheduleCalc()"/>
-          <button class="step-btn" onclick="stepKids(1)" aria-label="Increase">+</button>
+          <button type="button" class="step-btn" onclick="stepKids(1)" aria-label="Increase">+</button>
         </div>
       <div class="accuracy-prompt" id="ctcPrompt">
         <div class="accuracy-prompt-title">Dependent Tip</div>
@@ -1824,13 +1835,13 @@
   <div class="snt-section">
     <div class="snt-title">→ Send to Next Tool</div>
     <div class="snt-chips">
-      <button class="snt-chip" id="sntChipMonthly" onclick="selectSNTPeriod('month')">Monthly View</button>
-      <button class="snt-chip active" id="sntChipYearly" onclick="selectSNTPeriod('year')">Yearly View</button>
+      <button type="button" class="snt-chip" id="sntChipMonthly" onclick="selectSNTPeriod('month')">Monthly View</button>
+      <button type="button" class="snt-chip active" id="sntChipYearly" onclick="selectSNTPeriod('year')">Yearly View</button>
     </div>
     <div class="snt-flow-actions">
-      <button class="snt-back-btn" type="button" onclick="goBackTool()">← Back: Platform Fees</button>
-      <button class="snt-next-btn" id="sntNextBtn" onclick="goNextTool()">
-        Next: Income Goal Planner →
+      <button class="snt-back-btn" type="button" onclick="goBackTool()">Back: Platform Fees</button>
+      <button type="button" class="snt-next-btn" id="sntNextBtn" onclick="goNextTool()">
+        Next: Income Goal
       </button>
     </div>
     <div class="snt-hint" id="sntHint">Enter your income above to continue.</div>
@@ -1840,36 +1851,36 @@
   <div class="card actions-shell desktop-actions-shell">
     <div class="card-label">⚡ Actions &amp; Export</div>
     <div class="action-row">
-      <button class="btn btn-reset" onclick="resetAll()">↺ Reset</button>
-      <button class="btn btn-copy" id="copyBtn" onclick="copySummary()">⎘ Copy Summary</button>
+      <button type="button" class="btn btn-reset" onclick="resetAll()">↺ Reset</button>
+      <button type="button" class="btn btn-copy" id="copyBtn" onclick="copySummary()">⎘ Copy Summary</button>
     </div>
 
     <div class="clear-saved-row">
-      <button class="btn-clear-saved" onclick="clearSavedSettings()">✕ Clear saved settings</button>
+      <button type="button" class="btn-clear-saved" onclick="clearSavedSettings()">✕ Clear saved settings</button>
     </div>
 
     <div class="download-row">
-      <button class="btn-download" id="dlBtn" onclick="downloadImage()">
+      <button type="button" class="btn-download" id="dlBtn" onclick="downloadImage()">
         <svg class="dl-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M8 1v9M8 10l-3-3M8 10l3-3M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        Download as Image
+        Image Report
       </button>
     </div>
 
     <div class="download-row" style="margin-top:-4px;">
-      <button class="btn-pdf" id="pdfBtn" onclick="downloadPDF()">
+      <button type="button" class="btn-pdf" id="pdfBtn" onclick="downloadPDF()">
         <svg class="dl-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3 2h7l3 3v9H3V2z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M10 2v3h3M5.5 9.5h5M5.5 11.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
         </svg>
-        Download PDF Report
+        PDF Report
       </button>
     </div>
 
     <div class="disclaimer">
-      Simplified estimate for planning. Some rules are still simplified (full phaseouts, multi-state details, detailed S-Corp and credit rules). Consult a CPA.<br>
-      Based on IRS guidance for tax years 2025–2026.<br>
+      Planning estimate only. Some rules remain simplified, including full phaseouts, multi-state details, detailed S-Corp handling, and credits. Consult a CPA before filing.<br>
+      Built for USA freelance planning using IRS guidance for tax years 2025–2026.<br>
       <a href="https://usafreelancecalculator.com" target="_blank" rel="noopener" style="color:rgba(245,200,66,0.5);text-decoration:none;font-weight:700;">usafreelancecalculator.com</a>
     </div>
   </div>
@@ -4850,15 +4861,15 @@ async function downloadImage() {
     btn.classList.remove('loading');
     btn.classList.add('success');
     btn.innerHTML = `<svg class="dl-icon" viewBox="0 0 16 16" fill="none"><path d="M2 13h12M5 7l3 3 3-3M8 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Image Saved!`;
-    showToast('Tax estimate image downloaded!', true);
+    showToast('Image downloaded!', true);
     setTimeout(() => {
       btn.classList.remove('success');
-      btn.innerHTML = `<svg class="dl-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M8 10l-3-3M8 10l3-3M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Download as Image`;
+      btn.innerHTML = `<svg class="dl-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M8 10l-3-3M8 10l3-3M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Image Report`;
     }, 3000);
   } catch(e) {
     btn.classList.remove('loading');
-    btn.innerHTML = `<svg class="dl-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M8 10l-3-3M8 10l3-3M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Download as Image`;
-    showToast('Could not generate image — try Copy Summary instead', false);
+    btn.innerHTML = `<svg class="dl-icon" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M8 10l-3-3M8 10l3-3M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Image Report`;
+    showToast('Image export failed — try Copy Summary instead', false);
   }
 }
 
@@ -5013,11 +5024,11 @@ function downloadPDF() {
   }
 
   if (typeof window.jspdf === 'undefined' || !window.jspdf || !window.jspdf.jsPDF) {
-    showToast('PDF library still loading — please try again', false);
+    showToast('PDF library unavailable or still loading — please try again', false);
     return;
   }
   if (typeof window.html2canvas === 'undefined') {
-    showToast('PDF renderer still loading — please try again', false);
+    showToast('PDF renderer unavailable or still loading — please try again', false);
     return;
   }
 
@@ -5288,24 +5299,24 @@ function downloadPDF() {
     doc.addImage(img, 'PNG', 0, 0, pageWidth, pageHeight, undefined, 'FAST');
     doc.save('tax-estimate-' + year + (isMonthly ? '-monthly' : '-annual') + '.pdf');
     pdfSaved = true;
-    showToast('Tax report PDF downloaded!', true);
+    showToast('PDF downloaded!', true);
   }).catch(function(err) {
     console.error(err);
-    showToast('Could not generate PDF on this browser', false);
+    showToast('PDF export failed on this browser', false);
   }).finally(function() {
     if (mount && mount.parentNode) mount.parentNode.removeChild(mount);
     if (btn) {
       btn.disabled = false;
       if (pdfSaved) {
         btn.classList.add('success');
-        btn.innerHTML = '<svg class="dl-icon" viewBox="0 0 16 16" fill="none"><path d="M2 13h12M5 7l3 3 3-3M8 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> PDF Downloaded!';
+        btn.innerHTML = '<svg class="dl-icon" viewBox="0 0 16 16" fill="none"><path d="M2 13h12M5 7l3 3 3-3M8 1v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> PDF Saved!';
         setTimeout(function () {
           btn.classList.remove('success');
-          btn.innerHTML = '<svg class="dl-icon" viewBox="0 0 16 16" fill="none"><path d="M3 2h7l3 3v9H3V2z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 2v3h3M5.5 9.5h5M5.5 11.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg> Download PDF Report';
+          btn.innerHTML = '<svg class="dl-icon" viewBox="0 0 16 16" fill="none"><path d="M3 2h7l3 3v9H3V2z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 2v3h3M5.5 9.5h5M5.5 11.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg> PDF Report';
         }, 3000);
       } else {
         btn.classList.remove('success');
-        btn.innerHTML = '<svg class="dl-icon" viewBox="0 0 16 16" fill="none"><path d="M3 2h7l3 3v9H3V2z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 2v3h3M5.5 9.5h5M5.5 11.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg> Download PDF Report';
+        btn.innerHTML = '<svg class="dl-icon" viewBox="0 0 16 16" fill="none"><path d="M3 2h7l3 3v9H3V2z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 2v3h3M5.5 9.5h5M5.5 11.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg> PDF Report';
       }
     }
   });

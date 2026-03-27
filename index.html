@@ -458,8 +458,8 @@
         }
 
         /* GRID */
-        #panelFwd .grid{display:grid;grid-template-columns:1.06fr .94fr;gap:16px;position:relative;z-index:1}
-        .col{display:flex;flex-direction:column;gap:16px;min-width:0}
+        #panelFwd .grid{display:grid;grid-template-columns:1.06fr .94fr;gap:18px;position:relative;z-index:1}
+        .col{display:flex;flex-direction:column;gap:18px;min-width:0}
 
         /* CARDS */
         .card{
@@ -467,11 +467,11 @@
             border:1px solid var(--line);border-radius:28px;padding:18px;
             box-shadow:var(--shadow-sm);transition:background .3s,border-color .3s;
         }
-        .head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+        .head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap;margin-bottom:16px}
         .eyebrow{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--muted2)}
         .title{margin:4px 0 0;font-size:20px;line-height:1.08;letter-spacing:-.03em;font-weight:900;color:var(--text)}
-        .head-sub{margin-top:4px;font-size:10px;line-height:1.35;color:var(--muted);max-width:360px}
-        .help{font-size:13px;color:var(--muted);line-height:1.45;max-width:260px;text-align:right}
+        .head-sub{margin-top:4px;font-size:10px;line-height:1.45;color:var(--muted);max-width:380px}
+        .help{font-size:13px;color:var(--muted);line-height:1.5;max-width:280px;text-align:right}
 
         /* LABELS */
         .label-row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:6px}
@@ -479,7 +479,7 @@
         .lbl,.label{display:block;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.11em;color:var(--muted2)}
         .subhelp{font-size:12px;color:var(--muted);line-height:1.35;margin-bottom:10px}
         .subhelp strong{color:var(--text);font-weight:800}
-        .section{margin-top:18px}
+        .section{margin-top:20px}
 
         .whats{
             appearance:none;border:none;background:var(--whats-bg);color:var(--whats-color);
@@ -691,11 +691,14 @@
         .send-card.active .small{color:rgba(255,255,255,.78)}
         .send-card .big{margin-top:5px;font-size:18px;font-weight:900;letter-spacing:-.03em;color:var(--send-big)}
         .send-card.active .big{color:#fff}
-        .cta{margin-top:14px;width:100%;border:none;border-radius:18px;padding:16px 18px;cursor:pointer;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:16px;font-weight:900;letter-spacing:-.02em;box-shadow:0 10px 18px rgba(255,122,0,.16);font-family:inherit;-webkit-tap-highlight-color:transparent}
+        .cta{margin-top:14px;width:100%;min-height:52px;border:none;border-radius:18px;padding:16px 18px;cursor:pointer;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:16px;font-weight:900;letter-spacing:-.02em;box-shadow:0 10px 18px rgba(255,122,0,.16);font-family:inherit;-webkit-tap-highlight-color:transparent;display:flex;align-items:center;justify-content:center;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+        .cta:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+        .cta:active{transform:scale(.98)}
+        .cta:disabled{opacity:.58;cursor:not-allowed;transform:none;box-shadow:0 8px 14px rgba(255,122,0,.10)}
         .footnote{margin-top:10px;font-size:12px;color:var(--footnote-color);text-align:center;line-height:1.45}
 
         /* ACTION GRID */
-        .action-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+        .action-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
         .action{
             position:relative;min-height:70px;border-radius:18px;border:1px solid var(--action-border);
             background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015)),var(--action-bg);
@@ -714,6 +717,7 @@
         .action > *{position:relative;z-index:1}
         .action:hover{transform:translateY(-1px);box-shadow:0 12px 22px rgba(5,16,34,.17),inset 0 1px 0 rgba(255,255,255,.06)}
         .action:active{transform:translateY(0) scale(.995)}
+        .action:focus-visible{outline:2px solid rgba(74,139,255,.55);outline-offset:2px;border-color:rgba(74,139,255,.38);box-shadow:0 12px 22px rgba(5,16,34,.17),0 0 0 3px rgba(74,139,255,.12)}
         .action-icon-wrap{
             width:32px;height:32px;border-radius:10px;display:grid;place-items:center;flex:0 0 auto;
             line-height:1;font-weight:900;background:rgba(255,255,255,.10);
@@ -775,8 +779,8 @@
         .note b{color:var(--note-b)}
 
         @media (max-width:720px){
-            .head-sub{font-size:10px;max-width:none}
-            .action-grid{gap:7px}
+            .head-sub{font-size:10px;max-width:none;line-height:1.42}
+            .action-grid{gap:8px}
             .action{min-height:64px;padding:9px 10px;border-radius:17px;grid-template-columns:29px 1fr auto;gap:8px}
             .action-icon-wrap{width:29px;height:29px;border-radius:9px}
             .action-label{font-size:12px}
@@ -884,7 +888,9 @@
         .rev-send-card .big{font-size:16px;font-weight:900;letter-spacing:-.02em;color:var(--text)}
         .rev-send-card.active .big{color:#fff}
 
-        .rev-next-btn{margin-top:12px;width:100%;min-height:52px;border:none;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:16px;font-weight:900;box-shadow:0 14px 26px rgba(255,122,0,.16);cursor:pointer;font-family:inherit;-webkit-tap-highlight-color:transparent}
+        .rev-next-btn{margin-top:12px;width:100%;min-height:52px;border:none;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:16px;font-weight:900;box-shadow:0 14px 26px rgba(255,122,0,.16);cursor:pointer;font-family:inherit;-webkit-tap-highlight-color:transparent;display:flex;align-items:center;justify-content:center;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+        .rev-next-btn:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+        .rev-next-btn:active{transform:scale(.98)}
 
         .rev-hint-box{font-size:12px;color:var(--accent);font-weight:600;margin-top:10px;padding:7px 10px;background:var(--accent-soft);border-radius:8px;display:none;line-height:1.4;position:relative;z-index:1}
         .rev-hint-box.show{display:block}
@@ -908,13 +914,14 @@
         .toast.error{background:#ef4444}
 
         /* TOOLKIT NAV */
-        .toolkit-nav{max-width:1240px;margin:16px auto 0;padding:0}
-        .toolkit-nav-inner{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:11px 14px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:8px}
+        .toolkit-nav{max-width:1240px;margin:18px auto 0;padding:0}
+        .toolkit-nav-inner{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:12px 15px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:9px}
         .toolkit-label2{font-size:10px;font-weight:800;color:var(--muted2);text-transform:uppercase;letter-spacing:.7px;display:flex;align-items:center;gap:6px}
         .toolkit-label2::after{content:'';flex:1;height:1px;background:var(--line)}
-        .toolkit-pills{display:flex;flex-wrap:wrap;gap:8px}
+        .toolkit-pills{display:flex;flex-wrap:wrap;gap:9px}
         .toolkit-pill{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--chip-bg);font-size:12px;font-weight:700;color:var(--muted);cursor:pointer;text-decoration:none;user-select:none;white-space:nowrap;-webkit-tap-highlight-color:transparent;transition:all .18s}
         .toolkit-pill.active{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent;color:#fff;box-shadow:0 4px 14px rgba(255,106,0,.25)}
+        .toolkit-pill:focus-visible{outline:2px solid var(--accent2);outline-offset:2px;border-color:var(--accent2)}
         .pill-icon{font-size:13px;line-height:1}
 
         /* UTILITY */
@@ -977,9 +984,9 @@
 
 <div class="toolkit-nav">
     <div class="toolkit-nav-inner">
-        <div class="toolkit-label2">🧰 Freelance Tool Kit</div>
+        <div class="toolkit-label2">🧰 Connected Toolkit</div>
         <div class="toolkit-pills">
-            <a class="toolkit-pill active" href="/"><span class="pill-icon">⏱</span> Hourly Rate</a>
+            <a class="toolkit-pill active" href="index.html" aria-current="page"><span class="pill-icon">⏱</span> Hourly Rate</a>
             <a class="toolkit-pill" href="platform-fee-calculator.html"><span class="pill-icon">💸</span> Platform Fees</a>
             <a class="toolkit-pill" href="tax-estimator.html"><span class="pill-icon">🏛️</span> Tax Estimator</a>
             <a class="toolkit-pill" href="income-goal-planner.html"><span class="pill-icon">🎯</span> Goal Planner</a>
@@ -989,7 +996,7 @@
 </div>
 
 <div id="app">
-    <button class="dm-btn" id="dmBtn"><span id="dmIcon">☀️</span><span id="dmLbl">Light</span></button>
+    <button type="button" class="dm-btn" id="dmBtn"><span id="dmIcon">☀️</span><span id="dmLbl">Light</span></button>
 
     <div id="mainCard">
         <div class="tabs">
@@ -1057,7 +1064,7 @@
                         <div class="section">
                             <div class="label-row">
                                 <div class="label-group"><span class="lbl">5) Billable %</span></div>
-                                <button class="whats" data-title="What is Billable %?" data-body="Billable % shows how much of your working time is actual paid client work.
+                                <button type="button" class="whats" data-title="What is Billable %?" data-body="Billable % shows how much of your working time is actual paid client work.
 
 Example: If you work 8 hours and 5.6 of those are paid client work, your billable rate is 70%.
 
@@ -1087,7 +1094,7 @@ Typical freelancer range: 60–75%.">What's this?</button>
                         <div class="tax-box" id="taxSec">
                             <div class="label-row">
                                 <div class="label-group"><span class="lbl" style="color:var(--tax-label)">6) Tax Setup</span></div>
-                                <button class="whats" data-title="Tax Setup?" data-body="Choose Smart tax for a 2026 rule-based estimate, or use a manual % if you want a simple planning shortcut. This only affects after-tax take-home results.">What's this?</button>
+                                <button type="button" class="whats" data-title="Tax Setup?" data-body="Choose Smart tax for a 2026 rule-based estimate, or use a manual % if you want a simple planning shortcut. This only affects after-tax take-home results.">What's this?</button>
                             </div>
                             <div class="subhelp"><strong>Choose smart or manual tax planning.</strong> This only changes after-tax take-home results.</div>
                             <div class="chip-row tax-mode-row" id="taxChips">
@@ -1171,7 +1178,7 @@ Typical freelancer range: 60–75%.">What's this?</button>
                                     <div class="group">
                                         <div class="label-row" style="margin-bottom:4px;">
                                             <div class="label-group"><h3 class="group-title">Monthly Calculation</h3></div>
-                                            <button class="whats" data-title="Monthly Method?" data-body="Average: Yearly ÷ 12. Realistic: Weekly × 4.33. Only affects monthly display.">What's this?</button>
+                                            <button type="button" class="whats" data-title="Monthly Method?" data-body="Average: Yearly ÷ 12. Realistic: Weekly × 4.33. Only affects monthly display.">What's this?</button>
                                         </div>
                                         <div class="group-sub">Only affects <strong>monthly display</strong>.</div>
                                         <div class="radio-row" id="fwdMRadios">
@@ -1184,7 +1191,7 @@ Typical freelancer range: 60–75%.">What's this?</button>
                                     <div class="group">
                                         <div class="label-row" style="margin-bottom:4px;">
                                             <div class="label-group"><h3 class="group-title">Expenses</h3></div>
-                                            <button class="whats" data-title="Expenses?" data-body="Monthly business costs removed after tax to show actual usable income.">What's this?</button>
+                                            <button type="button" class="whats" data-title="Expenses?" data-body="Monthly business costs removed after tax to show actual usable income.">What's this?</button>
                                         </div>
                                         <div class="group-sub">Removed <strong>after tax</strong> to show final actual income.</div>
                                         <div class="mini-fields">
@@ -1245,7 +1252,7 @@ Typical freelancer range: 60–75%.">What's this?</button>
                         <div class="rev-target-box">
                             <div class="rev-target-head">
                                 <div class="rev-target-label">Target Income ($)</div>
-                                <button class="rev-help-btn whats" data-title="What's Target Income?" data-body="Enter your desired income goal. The calculator will work backward to find the hourly rate you need to charge.
+                                <button type="button" class="rev-help-btn whats" data-title="What's Target Income?" data-body="Enter your desired income goal. The calculator will work backward to find the hourly rate you need to charge.
 
 You can set goals per year, month, or week.">What's this?</button>
                             </div>
@@ -1319,7 +1326,7 @@ You can set goals per year, month, or week.">What's this?</button>
                         <div class="rev-tax-panel" id="revTaxSec">
                             <div class="label-row">
                                 <div class="label-group"><span class="lbl" style="color:var(--accent)">Reverse Tax Setup</span></div>
-                                <button class="whats" data-title="Reverse Tax Setup?" data-body="Choose Smart tax for a 2026 rule-based take-home estimate, or use a manual % if you want a simple planning shortcut. This only affects after-tax reverse goals.">What's this?</button>
+                                <button type="button" class="whats" data-title="Reverse Tax Setup?" data-body="Choose Smart tax for a 2026 rule-based take-home estimate, or use a manual % if you want a simple planning shortcut. This only affects after-tax reverse goals.">What's this?</button>
                             </div>
                             <div class="subhelp"><strong>Choose smart or manual tax planning.</strong> This only changes after-tax reverse goals.</div>
                             <div class="chip-row tax-mode-row" id="revTaxChips">
@@ -1449,7 +1456,7 @@ You can set goals per year, month, or week.">What's this?</button>
             <div class="hero-badge" id="billBadge"></div>
         </div>
         <div class="hero-big" id="rateVal">$50.00/hr</div>
-        <div class="hero-sub" id="rateSub">Preset-driven estimate with clear earnings visibility.</div>
+        <div class="hero-sub" id="rateSub">Preset-driven estimate with instant updates and clear earnings visibility.</div>
         <div class="mini-hero-line">
             <div class="mini-chip" id="heroChip1">Full-Time preset</div>
             <div class="mini-chip" id="heroChip2">48 weeks/year</div>
@@ -1490,7 +1497,7 @@ You can set goals per year, month, or week.">What's this?</button>
             <div class="actual-card" id="netYrCard"><div class="actual-k" id="netYrLabel">Actual Yearly Income</div><div class="actual-v" id="netYr">—</div><div class="actual-t" id="netYrSub">Final yearly usable income</div></div>
             <div class="actual-card"><div class="actual-k" id="netHrLabel">Final Effective Hourly</div><div class="actual-v" id="netHrEff">—</div><div class="actual-t" id="netHrSub">Take-home per billable hour</div></div>
         </div>
-        <div class="breakdown-row"><button class="breakdown-btn" id="breakdownBtn" data-title="Breakdown" data-body="">View breakdown</button></div>
+        <div class="breakdown-row"><button type="button" class="breakdown-btn" id="breakdownBtn" data-title="Breakdown" data-body="">View breakdown</button></div>
         <div class="actual-note" id="netNote">Includes tax estimate and expenses.</div>
     </div>
 
@@ -1513,7 +1520,7 @@ You can set goals per year, month, or week.">What's this?</button>
             <div class="send-card" data-gfc="month"><span class="small">Month</span><div class="big" id="gfcMonth">—</div></div>
             <div class="send-card active" data-gfc="year"><span class="small">Year</span><div class="big" id="gfcYear">—</div></div>
         </div>
-        <button class="cta" id="ctaBtn">Next: Platform Fee Calculator →</button>
+        <button type="button" class="cta" id="ctaBtn">Next: Platform Fees</button>
         <div class="footnote" id="nextHint"></div>
     </div>
 
@@ -1523,55 +1530,10 @@ You can set goals per year, month, or week.">What's this?</button>
             <div>
                 <div class="eyebrow">Actions</div>
                 <div class="title">Export &amp; Share</div>
-                <div class="head-sub">Quick exports, simple sharing, and a clean reset in one compact block.</div>
+                <div class="head-sub">Saved in your browser, export-ready, and easy to reset from one compact block.</div>
             </div>
         </div>
         <div class="action-grid">
-            <button class="action action-download" id="btnBreakdown" type="button">
-                <span class="action-icon-wrap" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 4v10"></path>
-                        <path d="m7.5 10.5 4.5 4.5 4.5-4.5"></path>
-                        <path d="M5 19h14"></path>
-                    </svg>
-                </span>
-                <span class="action-copyblock">
-                    <span class="action-label">Download Image</span>
-                    <span class="action-pill">Quick-share PNG</span>
-                </span>
-                <span class="action-meta">
-                    <span class="action-chip">PNG</span>
-                    <span class="action-arrow" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M7 17 17 7"></path>
-                            <path d="M9 7h8v8"></path>
-                        </svg>
-                    </span>
-                </span>
-            </button>
-            <button class="action action-pdf" id="btnPDF" type="button">
-                <span class="action-icon-wrap" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M8 4h8l3 3v11H5V4h3"></path>
-                        <path d="M8 4v4h8"></path>
-                        <path d="M9 13h6"></path>
-                        <path d="M9 17h4"></path>
-                    </svg>
-                </span>
-                <span class="action-copyblock">
-                    <span class="action-label">Export PDF</span>
-                    <span class="action-pill">Premium PDF</span>
-                </span>
-                <span class="action-meta">
-                    <span class="action-chip">PDF</span>
-                    <span class="action-arrow" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M7 17 17 7"></path>
-                            <path d="M9 7h8v8"></path>
-                        </svg>
-                    </span>
-                </span>
-            </button>
             <button class="action action-copy" id="btnCopy" type="button">
                 <span class="action-icon-wrap" aria-hidden="true">
                     <svg viewBox="0 0 24 24">
@@ -1589,6 +1551,51 @@ You can set goals per year, month, or week.">What's this?</button>
                         <svg viewBox="0 0 24 24">
                             <path d="M6 12h12"></path>
                             <path d="m13 7 5 5-5 5"></path>
+                        </svg>
+                    </span>
+                </span>
+            </button>
+            <button class="action action-pdf" id="btnPDF" type="button">
+                <span class="action-icon-wrap" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8 4h8l3 3v11H5V4h3"></path>
+                        <path d="M8 4v4h8"></path>
+                        <path d="M9 13h6"></path>
+                        <path d="M9 17h4"></path>
+                    </svg>
+                </span>
+                <span class="action-copyblock">
+                    <span class="action-label">PDF Report</span>
+                    <span class="action-pill">Premium PDF</span>
+                </span>
+                <span class="action-meta">
+                    <span class="action-chip">PDF</span>
+                    <span class="action-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 17 17 7"></path>
+                            <path d="M9 7h8v8"></path>
+                        </svg>
+                    </span>
+                </span>
+            </button>
+            <button class="action action-download" id="btnBreakdown" type="button">
+                <span class="action-icon-wrap" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 4v10"></path>
+                        <path d="m7.5 10.5 4.5 4.5 4.5-4.5"></path>
+                        <path d="M5 19h14"></path>
+                    </svg>
+                </span>
+                <span class="action-copyblock">
+                    <span class="action-label">Image Summary</span>
+                    <span class="action-pill">Quick-share PNG</span>
+                </span>
+                <span class="action-meta">
+                    <span class="action-chip">PNG</span>
+                    <span class="action-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 17 17 7"></path>
+                            <path d="M9 7h8v8"></path>
                         </svg>
                     </span>
                 </span>
@@ -1622,7 +1629,7 @@ You can set goals per year, month, or week.">What's this?</button>
 <!-- MODAL -->
 <div class="modal-backdrop" id="infoModal">
     <div class="modal-sheet">
-        <div class="modal-head"><h3 class="modal-title" id="modalTitle">Info</h3><button class="modal-close" id="modalCloseBtn">✕</button></div>
+        <div class="modal-head"><h3 class="modal-title" id="modalTitle">Info</h3><button type="button" class="modal-close" id="modalCloseBtn">✕</button></div>
         <div class="modal-body" id="modalBody"></div>
     </div>
 </div>
@@ -3325,7 +3332,7 @@ function generateFwdImage(){
     if(!el){
       try{document.body.removeChild(iframe);}catch(e){}
       window.__imgBusy=false;
-      toast('Image failed','error');
+      toast('Image export failed','error');
       return;
     }
     el.style.width='720px';el.style.maxWidth='720px';
@@ -3357,12 +3364,12 @@ function generateFwdImage(){
       link.click();
       try{document.body.removeChild(iframe);}catch(e){}
       window.__imgBusy=false;
-      toast('Image Downloaded \u2713','success');
+      toast('Image downloaded!','success');
     }).catch(function(err){
       console.error('Fwd Image Error:',err);
       try{document.body.removeChild(iframe);}catch(e){}
       window.__imgBusy=false;
-      toast('Image failed','error');
+      toast('Image export failed','error');
     });
   },1400);
 }
@@ -3553,7 +3560,7 @@ function generateRevImage(){
     if(!el){
       document.body.removeChild(iframe);
       window.__imgBusy=false;
-      toast('Image failed','error');
+      toast('Image export failed','error');
       return;
     }
     html2canvas(el,{
@@ -3580,12 +3587,12 @@ function generateRevImage(){
       link.click();
       document.body.removeChild(iframe);
       window.__imgBusy=false;
-      toast('Image Downloaded \u2713','success');
+      toast('Image downloaded!','success');
     }).catch(function(err){
       console.error('Image Error:',err);
       document.body.removeChild(iframe);
       window.__imgBusy=false;
-      toast('Image failed','error');
+      toast('Image export failed','error');
     });
   },1000);
 }
@@ -3649,12 +3656,12 @@ function generatePDF(){
     }).then(function(){
       cleanup(frame);
       window.__pdfBusy=false;
-      toast('PDF Downloaded ✓','success');
+      toast('PDF downloaded!','success');
     }).catch(function(err){
       console.error('PDF Error:',err);
       cleanup(frame);
       window.__pdfBusy=false;
-      toast('PDF failed','error');
+      toast('PDF export failed','error');
     });
   }, 300);
 }

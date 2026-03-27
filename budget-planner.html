@@ -89,18 +89,18 @@
     /* NO z-index here — stacking context breaks fixed children */
     max-width: 760px;
     margin: 0 auto;
-    padding: 24px 16px 60px;
+    padding: 26px 18px 64px;
   }
 
   /* ── 2-COLUMN DESKTOP LAYOUT (U4) ── */
   .page-cols { display: block; }
 
   @media(min-width: 980px) {
-    .wrapper { max-width: 1160px; padding: 24px 24px 60px; }
+    .wrapper { max-width: 1160px; padding: 26px 24px 64px; }
     .page-cols {
       display: grid;
       grid-template-columns: 1fr 360px;
-      gap: 24px;
+      gap: 26px;
       align-items: start;
     }
     .col-inputs { min-width: 0; }
@@ -204,8 +204,8 @@
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 22px 18px;
-    margin-bottom: 18px;
+    padding: 23px 19px;
+    margin-bottom: 20px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 12px 28px rgba(0,0,0,0.24);
@@ -375,8 +375,8 @@
   .field-helper {
     font-size: 11px;
     color: var(--text-dim);
-    line-height: 1.5;
-    margin-top: 7px;
+    line-height: 1.58;
+    margin-top: 8px;
   }
 
   .field-helper strong {
@@ -928,8 +928,8 @@
   .btn {
     font-family: 'Outfit', sans-serif;
     font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
+    font-weight: 800;
+    letter-spacing: 0.03em;
     padding: 9px 10px;
     border-radius: var(--radius);
     border: none;
@@ -939,6 +939,13 @@
     white-space: nowrap;
     justify-content: center;
     width: 100%;
+    min-height: 48px;
+  }
+  .btn:disabled {
+    opacity: 0.58;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
   }
 
   .btn-primary {
@@ -1053,14 +1060,14 @@
     /* prevent any child from blowing out the viewport */
     html, body { max-width: 100%; overflow-x: hidden; }
 
-    .wrapper { padding: 12px 10px; }
+    .wrapper { padding: 13px 11px; }
 
     header { padding: 12px 0 10px; margin-bottom: 12px; }
     .badge-top { font-size: 9px; padding: 3px 10px; margin-bottom: 8px; }
     h1 { font-size: 1.38rem; margin-bottom: 4px; }
     .subtitle { font-size: 11px; }
 
-    .card { padding: 13px 10px; margin-bottom: 10px; border-radius: 10px; }
+    .card { padding: 14px 11px; margin-bottom: 11px; border-radius: 12px; }
     .section-title { font-size: 0.9rem; margin-bottom: 12px; }
 
     /* field-row already goes 1-col at 480px; tighten gap */
@@ -1071,7 +1078,7 @@
 
     /* chips smaller */
     .chip, .quick-chip { font-size: 11px; padding: 5px 11px; }
-    .field-helper { font-size: 10px; margin-top: 5px; }
+    .field-helper { font-size: 10px; margin-top: 5px; line-height: 1.48; }
 
     /* expense rows: 4-col grid on mobile too — tighter */
     .expense-row { grid-template-columns: 1fr 80px 44px 28px; gap: 4px; margin-bottom: 6px; }
@@ -1127,8 +1134,8 @@
     flex-wrap: nowrap !important;
     gap: 6px;
     justify-content: flex-start;
-    margin-bottom: 26px;
-    padding: 2px 0 6px;
+    margin-bottom: 24px;
+    padding: 2px 0 8px;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
@@ -1140,12 +1147,21 @@
   .nav-pills::-webkit-scrollbar { display: none; }
   /* Ensure nav row never bleeds outside the wrapper */
   .nav-pills { max-width: 100%; }
+  .nav-pills-label {
+    margin-bottom: 12px;
+    color: var(--text-muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
 
   .nav-pill {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.05em;
-    padding: 6px 14px;
+    padding: 7px 15px;
     border-radius: 100px;
     border: 1px solid var(--border);
     background: var(--surface2);
@@ -1160,6 +1176,11 @@
   }
 
   .nav-pill:hover { border-color: var(--gold-dim); color: var(--text-dim); }
+  .nav-pill:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+    border-color: var(--gold);
+  }
 
   .nav-pill.active {
     background: rgba(201,168,76,0.18);
@@ -1174,7 +1195,7 @@
 
   .budget-toolkit-card {
     margin-bottom: 18px;
-    padding: 16px 15px;
+    padding: 17px 16px;
     border-radius: var(--radius-lg);
     border: 1px solid rgba(92,165,111,0.22);
     background: linear-gradient(180deg, rgba(92,165,111,0.06), rgba(15,18,24,0) 28%), var(--surface);
@@ -1233,8 +1254,8 @@
   .budget-toolkit-actions {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 7px;
-    margin-top: 13px;
+    gap: 8px;
+    margin-top: 14px;
   }
 
   .budget-toolkit-actions .btn:disabled {
@@ -1244,8 +1265,8 @@
   }
 
   .toolkit-final-card {
-    margin: 14px 0 16px;
-    padding: 16px 15px;
+    margin: 16px 0 18px;
+    padding: 17px 16px;
     border-radius: var(--radius-lg);
     border: 1px solid rgba(74,143,212,0.24);
     background:
@@ -1259,7 +1280,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 12px;
+    gap: 14px;
   }
 
   .toolkit-final-head > :first-child {
@@ -1320,8 +1341,8 @@
   .toolkit-final-metrics {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 8px;
-    margin-top: 14px;
+    gap: 10px;
+    margin-top: 15px;
   }
 
   .toolkit-final-metric {
@@ -1354,7 +1375,7 @@
   }
 
   .toolkit-final-meta {
-    margin-top: 11px;
+    margin-top: 12px;
     color: var(--text-muted);
     font-size: 11px;
     line-height: 1.55;
@@ -1363,8 +1384,8 @@
   .toolkit-final-actions {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
-    margin-top: 13px;
+    gap: 10px;
+    margin-top: 14px;
   }
 
   .toolkit-final-actions.is-standalone {
@@ -1529,23 +1550,32 @@
     .preset-cards { grid-template-columns: 1fr; }
   }
 
-  @media(max-width: 520px) {
-    /* Pills wrap onto 2 rows — all tools visible, no horizontal scroll */
+  @media(max-width: 640px) {
+    .nav-pills-label {
+      margin-bottom: 8px;
+      font-size: 9.5px;
+    }
+    /* Pills switch to a compact grid — all tools visible, no horizontal scroll */
     .nav-pills {
-      flex-wrap: wrap !important;
-      overflow-x: hidden !important;
-      justify-content: center;
-      gap: 5px 5px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+      overflow: visible !important;
+      gap: 6px;
       margin-bottom: 14px;
-      padding-bottom: 2px;
+      padding: 0;
     }
     .nav-pill {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 10px;
-      padding: 5px 10px;
-      flex-shrink: 0;
-      min-width: 70px;
+      min-width: 0;
+      min-height: 42px;
+      padding: 7px 10px;
       text-align: center;
-      white-space: nowrap;
+      white-space: normal;
+      line-height: 1.25;
     }
   }
 
@@ -2190,7 +2220,7 @@
   <header>
     <div class="badge-top">🇺🇸 USA • UPDATED 2026</div>
     <h1>Freelance <span>Budget</span><br>Planner</h1>
-    <p class="subtitle">Plan smart. Protect runway. Get paid.</p>
+    <p class="subtitle">Plan smart. Protect runway. Export with confidence.</p>
   </header>
 
 
@@ -2198,12 +2228,13 @@
   <div class="page-cols">
   <div class="col-inputs">
 
+  <div class="nav-pills-label">Connected Toolkit</div>
   <nav class="nav-pills" aria-label="Tool navigation">
-    <a class="nav-pill" href="/">Hourly Rate</a>
+    <a class="nav-pill" href="index.html">Hourly Rate</a>
     <a class="nav-pill" href="platform-fee-calculator.html">Platform Fees</a>
     <a class="nav-pill" href="tax-estimator.html">Tax Estimator</a>
     <a class="nav-pill" href="income-goal-planner.html">Goal Planner</a>
-    <span class="nav-pill active">Budget Planner</span>
+    <a class="nav-pill active" href="budget-planner.html" aria-current="page">Budget Planner</a>
   </nav>
 
   <div class="budget-toolkit-card is-hidden" id="budgetToolkitCard" aria-live="polite">
@@ -2222,7 +2253,7 @@
   <div class="preset-section">
     <div class="preset-section-label">⚡ Quick Start — Pick Your Profile</div>
     <div class="preset-cards">
-      <button class="preset-card" data-preset="solo_beginner" onclick="applyPreset('solo_beginner')">
+      <button type="button" class="preset-card" data-preset="solo_beginner" onclick="applyPreset('solo_beginner')">
         <div class="preset-card-name">Starter <span class="preset-card-selected-tag">✓ Selected</span></div>
         <div class="preset-card-desc">New freelancer, lean setup, minimal overhead costs.</div>
         <div class="preset-card-tags">
@@ -2230,7 +2261,7 @@
           <span class="preset-tag">Low cost</span>
         </div>
       </button>
-      <button class="preset-card" data-preset="high_software" onclick="applyPreset('high_software')">
+      <button type="button" class="preset-card" data-preset="high_software" onclick="applyPreset('high_software')">
         <div class="preset-card-name">Tools Heavy <span class="preset-card-selected-tag">✓ Selected</span></div>
         <div class="preset-card-desc">Heavy SaaS stack — many recurring subscriptions.</div>
         <div class="preset-card-tags">
@@ -2238,7 +2269,7 @@
           <span class="preset-tag">High tools</span>
         </div>
       </button>
-      <button class="preset-card" data-preset="marketing_heavy" onclick="applyPreset('marketing_heavy')">
+      <button type="button" class="preset-card" data-preset="marketing_heavy" onclick="applyPreset('marketing_heavy')">
         <div class="preset-card-name">Marketing Heavy <span class="preset-card-selected-tag">✓ Selected</span></div>
         <div class="preset-card-desc">Paid ads &amp; promotions drive the business costs.</div>
         <div class="preset-card-tags">
@@ -2257,8 +2288,8 @@
     <div class="view-toggle-wrap">
       <span class="view-toggle-label">View:</span>
       <div class="view-toggle">
-        <button id="viewBtnMonthly" class="view-btn active" onclick="setView('monthly')">Monthly</button>
-        <button id="viewBtnAnnual"  class="view-btn"        onclick="setView('annual')">Annual</button>
+        <button type="button" id="viewBtnMonthly" class="view-btn active" onclick="setView('monthly')">Monthly</button>
+        <button type="button" id="viewBtnAnnual"  class="view-btn"        onclick="setView('annual')">Annual</button>
       </div>
     </div>
 
@@ -2377,7 +2408,7 @@
       </div>
       <div class="expense-body" id="body-needs">
         <div id="needs-rows"></div>
-        <button class="btn-add" onclick="addRow('needs','','',true)">+ Add Need</button>
+        <button type="button" class="btn-add" onclick="addRow('needs','','',true)">+ Add Need</button>
         <div class="section-empty-hint">Tap a quick-add chip or add your own need.</div>
       </div>
     </div>
@@ -2397,7 +2428,7 @@
       </div>
       <div class="expense-body" id="body-wants">
         <div id="wants-rows"></div>
-        <button class="btn-add" onclick="addRow('wants','','',true)">+ Add Want</button>
+        <button type="button" class="btn-add" onclick="addRow('wants','','',true)">+ Add Want</button>
         <div class="section-empty-hint">Tap a quick-add chip or add your own want.</div>
       </div>
     </div>
@@ -2420,7 +2451,7 @@
       </div>
       <div class="expense-body" id="body-overhead">
         <div id="overhead-rows"></div>
-        <button class="btn-add" onclick="addRow('overhead','','',true)">+ Add Overhead</button>
+        <button type="button" class="btn-add" onclick="addRow('overhead','','',true)">+ Add Overhead</button>
         <div class="section-empty-hint">Tap a quick-add chip or add your own overhead cost.</div>
       </div>
     </div>
@@ -2440,7 +2471,7 @@
       </div>
       <div class="expense-body" id="body-operating">
         <div id="operating-rows"></div>
-        <button class="btn-add" onclick="addRow('operating','','',true)">+ Add Operating</button>
+        <button type="button" class="btn-add" onclick="addRow('operating','','',true)">+ Add Operating</button>
         <div class="section-empty-hint">Tap a quick-add chip or add your own operating cost.</div>
       </div>
     </div>
@@ -2613,7 +2644,7 @@
         </div>
       </div>
 
-      <div class="toolkit-final-meta" id="toolkitFinalMeta">Use the connected flow for a full toolkit story, or export this page as a standalone budget report.</div>
+      <div class="toolkit-final-meta" id="toolkitFinalMeta">Saved in your browser • Connected toolkit ready • Export the final report from here.</div>
 
       <div class="toolkit-final-actions">
         <button class="btn btn-secondary" id="toolkitFinalBackBtn" type="button">Back: Income Goal</button>
@@ -2623,11 +2654,11 @@
     </div>
 
     <div class="actions">
-      <button class="btn btn-primary" onclick="copySummary()">📋 Copy Summary</button>
-      <button class="btn btn-secondary" onclick="downloadPrint()">🖨️ Print / PDF</button>
-      <button class="btn btn-secondary" onclick="exportCSV()">📥 CSV</button>
-      <button class="btn btn-secondary" onclick="downloadImage()">🖼️ Image</button>
-      <button class="btn btn-ghost" onclick="resetAll()">⟲ Reset</button>
+      <button type="button" class="btn btn-primary" onclick="copySummary()">📋 Copy Summary</button>
+      <button type="button" class="btn btn-secondary" onclick="downloadPrint()">🖨️ Print / PDF</button>
+      <button type="button" class="btn btn-secondary" onclick="downloadImage()">🖼️ Image</button>
+      <button type="button" class="btn btn-secondary" onclick="exportCSV()">📥 CSV</button>
+      <button type="button" class="btn btn-ghost" onclick="resetAll()">⟲ Reset</button>
     </div>
   </div>
   </div><!-- /.col-summary -->
@@ -3133,7 +3164,7 @@ function addRow(section, label='', amount='', autoFocus=false) {
         onblur="restoreZero(this)"/>
     </div>
     <span class="exp-pct">—</span>
-    <button class="btn-del" onclick="delRow('${id}')" title="Remove">✕</button>
+    <button type="button" class="btn-del" onclick="delRow('${id}')" title="Remove">✕</button>
   `;
   wrap.appendChild(div);
   save(); compute();
@@ -4029,10 +4060,10 @@ function renderBudgetToolkitFinalCard() {
       ? `Budget Planner is using your current numbers while keeping ${flow.sourceLabel} attached as reference.`
       : `Budget Planner is now acting as the final sink for ${flow.sourceLabel}.`;
     copy.textContent = flow.mode === 'pending'
-      ? 'Apply the imported gross if you want Goal Planner to seed this budget, or keep your current budget and export the final toolkit report from here.'
-      : 'This final screen combines gross target context with your budget, reserve, and runway so the export feels like one connected product.';
+      ? 'Apply the imported gross if you want Goal Planner to seed this budget, or keep your current budget and export one clean toolkit report from here.'
+      : 'This final screen combines gross target context with your budget, reserve, and runway so the export reads like one connected toolkit story.';
     metaEl.textContent = [flow.metaLine, flow.comparisonLine].filter(Boolean).join(' • ')
-      || `Connected flow: ${flow.sourceLabel || 'Toolkit'} -> Budget Planner.`;
+      || `Connected flow • ${flow.sourceLabel || 'Toolkit'} -> Budget Planner • Saved in your browser.`;
     if (actionsEl) actionsEl.classList.remove('is-standalone');
     if (reportBtn) {
       reportBtn.classList.remove('is-hidden');
@@ -4043,7 +4074,7 @@ function renderBudgetToolkitFinalCard() {
     badge.textContent = 'Standalone';
     title.textContent = 'Budget Planner can work standalone or as the toolkit final sink.';
     copy.textContent = 'Use Income Goal Planner if you want a connected handoff. In standalone mode, use the Print / PDF action below for the final export.';
-    metaEl.textContent = 'Standalone mode stays intact. Connected toolkit imports only appear when fresh shared data exists.';
+    metaEl.textContent = 'Saved in your browser • Standalone mode stays intact • Connected imports only appear when fresh shared data exists.';
     if (actionsEl) actionsEl.classList.add('is-standalone');
     if (reportBtn) {
       reportBtn.classList.add('is-hidden');
@@ -4077,7 +4108,7 @@ function startToolkitOver() {
   budgetToolkitPendingImport = null;
   budgetToolkitContext = null;
   save();
-  window.location.href = '/';
+  window.location.href = 'index.html';
 }
 
 function renderBudgetToolkitCard() {
@@ -5608,7 +5639,7 @@ function renderBudgetShareCardHtml(data) {
 
 async function downloadPrint() {
   if (typeof window.jspdf === 'undefined' || typeof window.jspdf.jsPDF === 'undefined') {
-    toast('PDF library loading — try again in 2s.');
+    toast('PDF library unavailable or still loading — try again in 2s.');
     return;
   }
   if (typeof html2canvas === 'undefined') {
@@ -5652,7 +5683,7 @@ async function downloadPrint() {
     doc.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, w, h, undefined, 'FAST');
     const fname = getBudgetReportStem() + '-' + new Date().toISOString().slice(0, 10) + '.pdf';
     doc.save(fname);
-    toast('Premium PDF downloaded!');
+    toast('PDF downloaded!');
   } catch (err) {
     console.error(err);
     toast('Premium PDF fallback starting...');
@@ -5665,7 +5696,7 @@ async function downloadPrint() {
 // ── PRINT / PDF — legacy jsPDF fallback ──
 function downloadPrintLegacy() {
   if (typeof window.jspdf === 'undefined' || typeof window.jspdf.jsPDF === 'undefined') {
-    toast('PDF library loading — try again in 2s.');
+    toast('PDF library unavailable or still loading — try again in 2s.');
     return;
   }
   const { jsPDF } = window.jspdf;
@@ -6075,7 +6106,7 @@ function updateInsights(health, income, personal, business, taxAmt, needs, wants
 // ── IMAGE DOWNLOAD ──
 async function downloadImage() {
   if (typeof html2canvas === 'undefined') {
-    toast('Image library loading — try again in 2s.');
+    toast('Image library unavailable or still loading — try again in 2s.');
     return;
   }
 
@@ -6115,7 +6146,7 @@ async function downloadImage() {
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-    toast('Premium image downloaded!');
+    toast('Image downloaded!');
   } catch (err) {
     console.error(err);
     toast('Premium image fallback starting...');
@@ -6129,7 +6160,7 @@ function downloadImageLegacy() {
   const card = document.getElementById('resultsCard');
   if (!card) { toast('Results card not found.'); return; }
   if (typeof html2canvas === 'undefined') {
-    toast('Image library loading — try again in 2s.');
+    toast('Image library unavailable or still loading — try again in 2s.');
     return;
   }
 
@@ -6263,7 +6294,7 @@ function downloadImageLegacy() {
     if (actionsEl) actionsEl.style.display = '';
     if (donutCanvas) donutCanvas.remove();
     if (donutDiv) donutDiv.style.display = '';
-    toast('Image failed — try Copy Summary.');
+    toast('Image export failed — try Copy Summary.');
   });
 }
 

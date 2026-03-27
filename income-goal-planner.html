@@ -467,6 +467,65 @@
       grid-template-columns:repeat(3, minmax(0,1fr));
       gap:10px;
     }
+    .tool-access-card{
+      display:grid;
+      gap:15px;
+      padding:19px;
+      border-radius:22px;
+      border:1px solid rgba(242,198,109,.24);
+      background:
+        radial-gradient(circle at top right, rgba(242,198,109,.12), transparent 34%),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)),
+        var(--panel-2);
+      box-shadow:var(--shadow-md);
+    }
+    .tool-access-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      width:max-content;
+      min-height:28px;
+      padding:0 11px;
+      border-radius:999px;
+      border:1px solid rgba(242,198,109,.18);
+      background:rgba(242,198,109,.08);
+      color:#f4d58a;
+      font-size:.72rem;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .tool-access-title{
+      margin:12px 0 0;
+      color:var(--text);
+      font-size:1.08rem;
+      font-weight:900;
+      letter-spacing:-.02em;
+    }
+    .tool-access-text{
+      margin:8px 0 0;
+      color:var(--text-2);
+      font-size:.94rem;
+      line-height:1.58;
+    }
+    .tool-access-actions{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+    }
+    .tool-access-actions .btn{
+      min-width:0;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+    .tool-access-meta{
+      color:#cfe2ff;
+      font-size:.87rem;
+      line-height:1.52;
+    }
 
     .toolkit-import-actions .btn:disabled{
       opacity:.56;
@@ -1817,6 +1876,15 @@
         grid-template-columns:1fr;
       }
 
+      .tool-access-card{
+        padding:17px;
+        border-radius:20px;
+      }
+
+      .tool-access-actions{
+        grid-template-columns:1fr;
+      }
+
       .mode-grid{
         gap:8px;
       }
@@ -2033,6 +2101,20 @@
           <a class="tool-tab" data-tool="budget_planner" href="budget-planner.html">Budget Planner</a>
         </div>
       </nav>
+
+      <section class="tool-access-card" aria-label="Income goal planner access">
+        <div>
+          <div class="tool-access-kicker">Standalone + Toolkit</div>
+          <h2 class="tool-access-title">Use Goal Planner on its own, or keep moving toward Budget Planner.</h2>
+          <p class="tool-access-text">This tool works for direct goal planning, but inside the toolkit it also converts imported gross context into a cleaner planning step before budget allocation.</p>
+        </div>
+        <div class="tool-access-actions">
+          <a class="btn btn-secondary" href="index.html#homeTools">Toolkit Home</a>
+          <a class="btn btn-secondary" href="tax-estimator.html">Back: Tax Estimator</a>
+          <a class="btn btn-primary" href="budget-planner.html">Next: Budget Planner</a>
+        </div>
+        <div class="tool-access-meta">Direct use keeps the planner self-contained, while toolkit mode can still bring in gross context without replacing your goal automatically.</div>
+      </section>
 
       <!-- MODE PRESETS -->
       <section class="mode-zone">

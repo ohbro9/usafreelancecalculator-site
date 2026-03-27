@@ -216,6 +216,48 @@
   @media(hover:hover) and (pointer:fine){
     .tk-pill:not(.active):hover{border-color:var(--pfc-blue);color:var(--pfc-blue);}
   }
+  .pfc-access-card{
+    display:grid;gap:14px;
+    padding:16px 17px;
+    border-radius:20px;
+    border:1px solid rgba(31,163,226,.18);
+    background:
+      radial-gradient(circle at top right, rgba(31,163,226,.10), transparent 34%),
+      linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.012)),
+      var(--pfc-panel);
+    box-shadow:var(--pfc-shadow-md);
+    margin-bottom:18px;
+  }
+  .pfc-access-kicker{
+    display:inline-flex;align-items:center;gap:8px;width:max-content;
+    min-height:28px;padding:0 11px;border-radius:999px;
+    border:1px solid rgba(31,163,226,.18);
+    background:rgba(31,163,226,.10);color:#d9f2ff;
+    font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;
+  }
+  .pfc-access-title{
+    margin:0;color:var(--pfc-text);font-size:19px;line-height:1.08;letter-spacing:-.03em;font-weight:900;
+  }
+  .pfc-access-copy{
+    margin:8px 0 0;color:var(--pfc-muted);font-size:13px;line-height:1.55;max-width:760px;
+  }
+  .pfc-access-actions{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;
+  }
+  .pfc-access-link{
+    min-height:44px;padding:0 14px;border-radius:16px;border:1px solid var(--pfc-line);
+    background:rgba(255,255,255,.02);color:var(--pfc-text);text-decoration:none;
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    font-size:12px;font-weight:800;letter-spacing:-.01em;transition:all .18s ease;
+  }
+  .pfc-access-link:hover{transform:translateY(-1px);border-color:var(--pfc-blue);color:var(--pfc-blue);}
+  .pfc-access-link:focus-visible{outline:2px solid var(--pfc-blue2);outline-offset:3px;border-color:var(--pfc-blue2);}
+  .pfc-access-link.primary{
+    background:linear-gradient(135deg,var(--pfc-blue),var(--pfc-blue2));
+    color:#fff;border-color:transparent;box-shadow:0 12px 22px rgba(31,163,226,.18);
+  }
+  .pfc-access-meta{font-size:12px;line-height:1.5;color:var(--pfc-muted2)}
+  @media(max-width:640px){.pfc-access-actions{grid-template-columns:1fr;}}
 
   /* ═══════════════════════════════════════
      HERO SECTION
@@ -2076,6 +2118,20 @@
         <a class="tk-pill" href="income-goal-planner.html">🎯 Goal Planner</a>
         <a class="tk-pill" href="budget-planner.html">📊 Budget Planner</a>
       </div>
+
+      <section class="pfc-access-card" aria-label="Platform fee tool access">
+        <div>
+          <div class="pfc-access-kicker">Standalone + Toolkit</div>
+          <h2 class="pfc-access-title">Open Platform Fees directly, or continue the guided toolkit path.</h2>
+          <p class="pfc-access-copy">This page works on its own for fee comparison, but it also sits between Hourly Rate and Tax Estimator in the connected flow.</p>
+        </div>
+        <div class="pfc-access-actions">
+          <a class="pfc-access-link" href="index.html#homeTools">Toolkit Home</a>
+          <a class="pfc-access-link" href="index.html#mainCard">Open Hourly Start</a>
+          <a class="pfc-access-link primary" href="tax-estimator.html">Next: Tax Estimator</a>
+        </div>
+        <div class="pfc-access-meta">Use this calculator separately for client-pay vs keep comparisons, or move forward with the pre-tax amount into tax planning.</div>
+      </section>
 
       <!-- ══ HERO ══ -->
       <section class="pfc-hero">

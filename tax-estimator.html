@@ -169,6 +169,77 @@
     outline-offset: 2px;
     border-color: var(--gold);
   }
+  .tool-access-card {
+    display: grid;
+    gap: 14px;
+    margin: 0 0 16px;
+    padding: 15px 15px 14px;
+    border-radius: 22px;
+    border: 1px solid rgba(245,200,66,.16);
+    background: linear-gradient(180deg, rgba(245,200,66,.06), rgba(255,255,255,.015)), rgba(255,255,255,.018);
+    box-shadow: 0 12px 30px rgba(0,0,0,.20);
+  }
+  .tool-access-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: max-content;
+    min-height: 28px;
+    padding: 0 11px;
+    border-radius: 999px;
+    border: 1px solid rgba(245,200,66,.18);
+    background: rgba(245,200,66,.08);
+    color: #f4d975;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+  .tool-access-title {
+    margin: 0;
+    color: #f0f5ff;
+    font-size: 20px;
+    line-height: 1.08;
+    letter-spacing: -.03em;
+    font-weight: 900;
+  }
+  .tool-access-copy {
+    margin: 8px 0 0;
+    color: #c7d0e1;
+    font-size: 13px;
+    line-height: 1.55;
+    max-width: 760px;
+  }
+  .tool-access-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 10px;
+  }
+  .tool-access-link {
+    min-height: 44px;
+    padding: 0 14px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.08);
+    background: rgba(255,255,255,.022);
+    color: #e8eef9;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    transition: all .18s ease;
+  }
+  .tool-access-link:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); transform: translateY(-1px); }
+  .tool-access-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-color: var(--gold); }
+  .tool-access-link.primary {
+    background: linear-gradient(180deg,#f8da62,#efc640);
+    color: #17130a;
+    border-color: rgba(239,198,74,.32);
+    box-shadow: 0 10px 22px rgba(239,198,74,.16);
+  }
+  .tool-access-meta { font-size: 12px; line-height: 1.5; color: #93a1b8; }
   @media(max-width: 640px) {
     .toolkit-strip {
       padding: 13px 11px 11px;
@@ -190,6 +261,7 @@
       border-radius: 18px;
       font-size: 11.5px;
     }
+    .tool-access-actions { grid-template-columns: 1fr; }
   }
 
   /* ── HEADER ── */
@@ -1214,6 +1286,20 @@
       <a class="toolkit-pill" href="budget-planner.html">Budget Planner</a>
     </div>
   </nav>
+
+  <section class="tool-access-card" aria-label="Tax estimator access">
+    <div>
+      <div class="tool-access-kicker">Standalone + Toolkit</div>
+      <h2 class="tool-access-title">Use Tax Estimator directly, or continue from fees into planning.</h2>
+      <p class="tool-access-copy">This page supports direct tax estimation, but it also acts as the bridge between Platform Fees and Income Goal inside the connected toolkit.</p>
+    </div>
+    <div class="tool-access-actions">
+      <a class="tool-access-link" href="index.html#homeTools">Toolkit Home</a>
+      <a class="tool-access-link" href="platform-fee-calculator.html">Back: Platform Fees</a>
+      <a class="tool-access-link primary" href="income-goal-planner.html">Next: Income Goal</a>
+    </div>
+    <div class="tool-access-meta">Direct use works for standalone tax planning, while shared toolkit amounts can still auto-fill the income side when fresh data exists.</div>
+  </section>
 
   <div class="desktop-layout">
     <div class="desktop-left">

@@ -1192,6 +1192,82 @@
     box-shadow: 0 0 10px rgba(201,168,76,0.18), inset 0 0 8px rgba(201,168,76,0.06);
     text-shadow: 0 0 8px rgba(201,168,76,0.35);
   }
+  .tool-access-card {
+    margin-bottom: 18px;
+    padding: 17px 16px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(201,168,76,0.22);
+    background: linear-gradient(180deg, rgba(201,168,76,0.06), rgba(15,18,24,0) 28%), var(--surface);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.24);
+  }
+  .tool-access-kicker {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 0 11px;
+    border-radius: 999px;
+    border: 1px solid rgba(201,168,76,0.18);
+    background: rgba(201,168,76,0.10);
+    color: var(--gold-light);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .tool-access-title {
+    margin: 12px 0 0;
+    color: var(--text);
+    font-size: 20px;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+  }
+  .tool-access-copy {
+    margin: 8px 0 0;
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.58;
+    max-width: 760px;
+  }
+  .tool-access-actions {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 10px;
+  }
+  .tool-access-link {
+    min-height: 44px;
+    padding: 0 14px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    transition: border-color 0.15s, color 0.15s, background 0.15s, box-shadow 0.15s, transform 0.15s;
+  }
+  .tool-access-link:hover { border-color: var(--gold-dim); color: var(--text-dim); transform: translateY(-1px); }
+  .tool-access-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-color: var(--gold); }
+  .tool-access-link.primary {
+    background: rgba(201,168,76,0.18);
+    border-color: var(--gold);
+    color: var(--gold-light);
+    box-shadow: 0 0 10px rgba(201,168,76,0.18), inset 0 0 8px rgba(201,168,76,0.06);
+  }
+  .tool-access-meta {
+    margin-top: 12px;
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.52;
+  }
+  @media(max-width: 640px) {
+    .tool-access-actions { grid-template-columns: 1fr; }
+  }
 
   .budget-toolkit-card {
     margin-bottom: 18px;
@@ -2020,6 +2096,7 @@
     .insight-chip { font-size: 9px; }
     .insight-tip { font-size: 10px; }
     .btn { font-size: 11px; padding: 8px 8px; }
+    .tool-access-actions { grid-template-columns: 1fr; }
   }
 
   @media(min-width: 980px) and (max-width: 1120px) {
@@ -2236,6 +2313,18 @@
     <a class="nav-pill" href="income-goal-planner.html">Goal Planner</a>
     <a class="nav-pill active" href="budget-planner.html" aria-current="page">Budget Planner</a>
   </nav>
+
+  <section class="tool-access-card" aria-label="Budget planner access">
+    <div class="tool-access-kicker">Standalone + Toolkit</div>
+    <h2 class="tool-access-title">Use Budget Planner directly, or finish the full toolkit sequence here.</h2>
+    <p class="tool-access-copy">Budget Planner works as a standalone budgeting tool, but it also serves as the final sink for the connected toolkit after Goal Planner hands off a gross target.</p>
+    <div class="tool-access-actions">
+      <a class="tool-access-link" href="index.html#homeTools">Toolkit Home</a>
+      <a class="tool-access-link" href="income-goal-planner.html">Back: Income Goal</a>
+      <a class="tool-access-link primary" href="index.html#mainCard">Start at Hourly</a>
+    </div>
+    <div class="tool-access-meta">Come here directly for budget control, or use it as the last step after rate, fee, tax, and goal planning are already connected.</div>
+  </section>
 
   <div class="budget-toolkit-card is-hidden" id="budgetToolkitCard" aria-live="polite">
     <div class="budget-toolkit-kicker" id="budgetToolkitKicker">Imported Goal Gross</div>

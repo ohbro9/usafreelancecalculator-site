@@ -2,6 +2,9 @@
 
 Static multi-page toolkit for US freelancers, prepared for GitHub Pages deployment.
 
+This deploy repo is intended to serve only public website assets. Internal planning notes,
+QA reports, and working docs are maintained outside the public Pages path.
+
 ## Live Structure
 
 - `/` -> Hourly Rate Calculator
@@ -18,7 +21,6 @@ Static multi-page toolkit for US freelancers, prepared for GitHub Pages deployme
 - `income-goal-planner.html`
 - `budget-planner.html`
 - `assets/js/toolkit-core.js`
-- `docs/`
 - `robots.txt`
 - `sitemap.xml`
 
@@ -38,4 +40,3 @@ Serve the folder with any static server, for example:
 ```bash
 python3 -m http.server 4173 --directory /root/usafreelancecalculator-site
 ```
-

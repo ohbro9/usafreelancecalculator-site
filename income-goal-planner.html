@@ -3440,6 +3440,7 @@
         ui.pdfBtn = document.getElementById('goalPdfBtn');
         ui.shareBtn = document.getElementById('goalShareBtn');
         ui.resetBtn = document.getElementById('goalResetBtn');
+        ui.footerNote = document.querySelector('.footer-note');
         ui.budgetBackBtn = document.getElementById('budgetBackBtn');
         ui.budgetNextBtn = document.getElementById('budgetNextBtn');
         ui.budgetNextMeta = document.getElementById('budgetNextMeta');
@@ -5877,6 +5878,7 @@
         renderToolkitImportCard(result);
         renderBudgetNextCta(result);
         renderResults(result);
+        updateFooterActionsState(result);
 	        renderBenchmark();
 	        renderPipeline();
 	        renderSticky(result);
@@ -5991,6 +5993,28 @@
 	        ui.infoStripIcon.textContent = 'ℹ️';
 	        ui.infoStripText.textContent = 'Planning updates instantly as you adjust your goal, workload, tax setup, and revenue model.';
 	      }
+
+      function getPrimaryResultWarning(result) {
+        if (!result || !Array.isArray(result.warnings)) return null;
+        return result.warnings.find(item => item && typeof item.msg === 'string' && item.msg.trim()) || null;
+      }
+
+      function updateFooterActionsState(result) {
+        const canExport = !!(result && !result.error);
+        const primaryWarning = getPrimaryResultWarning(result);
+        const blockedNote = primaryWarning
+          ? `${primaryWarning.msg} Fix the current planner settings to enable copy, PDF, and image export.`
+          : 'Add a valid goal and let the planner finish calculating to enable copy, PDF, and image export.';
+
+        if (ui.copyBtn) ui.copyBtn.disabled = !canExport;
+        if (ui.pdfBtn) ui.pdfBtn.disabled = !canExport;
+        if (ui.shareBtn) ui.shareBtn.disabled = !canExport;
+        if (ui.footerNote) {
+          ui.footerNote.textContent = canExport
+            ? 'Estimates only for planning · Not financial or tax advice'
+            : blockedNote;
+        }
+      }
 
       function renderResults(result) {
 	        if (!result || result.error) {
@@ -6189,9 +6213,31 @@
         ui.stickyBadge.style.color = s.color;
       }
 
+      function getPlannerExportGuard(actionLabel) {
+        const result = state.lastResult;
+        if (result && !result.error) return null;
+
+        const primaryWarning = getPrimaryResultWarning(result);
+        return {
+          title: `${actionLabel} Unavailable`,
+          paragraphs: [
+            primaryWarning
+              ? primaryWarning.msg
+              : 'Add a valid goal and let the planner finish calculating before continuing.',
+            actionLabel === 'Copy Summary'
+              ? 'Fix the planner inputs first, then copy the latest summary.'
+              : `Fix the planner inputs first, then try ${actionLabel.toLowerCase()} again.`
+          ]
+        };
+      }
+
 	      function copyPlan() {
 	        const r = state.lastResult;
-	        if (!r || r.error) return;
+	        if (!r || r.error) {
+          const guard = getPlannerExportGuard('Copy Summary');
+          showInfoModal(guard.title, guard.paragraphs);
+          return;
+        }
 	        const lines = [
 	          'USA Freelance Income Goal Planner',
 	          '',
@@ -8024,11 +8070,17 @@
 	          return;
 	        }
 
+          const invalidStateGuard = getPlannerExportGuard('Image / Share');
+          if (invalidStateGuard) {
+            showInfoModal(invalidStateGuard.title, invalidStateGuard.paragraphs);
+            return;
+          }
+
 	        const data = buildShareCardData();
 	        if (!data) {
 	          showInfoModal('Image / Share Unavailable', [
-	            'Add a valid goal and let the planner finish calculating before exporting.',
-            'The PNG share card uses your latest planner result.'
+	            'The planner could not build a valid share card from the current result.',
+            'Try again after the latest calculation finishes updating.'
 	          ]);
 	          return;
 	        }
@@ -8095,11 +8147,17 @@
 	          return;
 	        }
 
+          const invalidStateGuard = getPlannerExportGuard('PDF Export');
+          if (invalidStateGuard) {
+            showInfoModal(invalidStateGuard.title, invalidStateGuard.paragraphs);
+            return;
+          }
+
 	        const data = buildPdfData();
 	        if (!data) {
 	          showInfoModal('PDF Export Unavailable', [
-	            'Add a valid goal and let the planner finish calculating before exporting.',
-            'The premium PDF uses your latest planner results, benchmark insight, and pipeline data.'
+	            'The planner could not build a valid PDF from the current result.',
+            'Try again after the latest calculation finishes updating.'
 	          ]);
 	          return;
 	        }

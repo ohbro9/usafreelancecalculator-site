@@ -3,29 +3,29 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5"/>
-    <title>USA Freelance Hourly Rate Calculator — Free Tool</title>
-    <meta name="description" content="Free USA Freelance Hourly Rate Calculator — calculate your earnings, taxes, and required rates instantly. Forward & reverse calculation with PDF & image export.">
-    <meta name="keywords" content="freelance rate calculator, hourly rate calculator, freelance earnings, USA freelance, self employed calculator">
+    <title>USA Freelance Calculator Toolkit — 5 Connected Tools for Freelancers</title>
+    <meta name="description" content="Premium USA Freelance Calculator Toolkit with 5 connected tools: hourly rate, platform fees, tax estimator, income goal planner, and budget planner. Use each tool separately or as one workflow.">
+    <meta name="keywords" content="freelance calculator toolkit, hourly rate calculator, platform fee calculator, freelancer tax estimator, income goal planner, budget planner, USA freelance">
     <meta name="robots" content="index, follow">
     <meta name="author" content="USAFreelanceCalculator.com">
     <meta name="theme-color" content="#ff7a00">
     <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://usafreelancecalculator.com/">
-    <meta property="og:title" content="USA Freelance Hourly Rate Calculator">
-    <meta property="og:description" content="Calculate your freelance hourly rate and yearly earnings with tax estimates. Free tool with PDF & image export.">
+    <meta property="og:title" content="USA Freelance Calculator Toolkit">
+    <meta property="og:description" content="5 connected premium tools for US freelancers: hourly rate, platform fees, tax, income goal, and budget planning.">
     <meta property="og:url" content="https://usafreelancecalculator.com/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="USA Freelance Calculator">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="USA Freelance Hourly Rate Calculator">
-    <meta name="twitter:description" content="Free calculator for freelancers — hourly rate, taxes, earnings breakdown & more.">
+    <meta name="twitter:title" content="USA Freelance Calculator Toolkit">
+    <meta name="twitter:description" content="Premium toolkit for US freelancers with 5 connected tools and standalone direct access.">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "USA Freelance Hourly Rate Calculator",
+        "name": "USA Freelance Calculator Toolkit",
         "url": "https://usafreelancecalculator.com/",
-        "description": "Free hourly rate calculator for US freelancers with earnings, tax, and export planning.",
+        "description": "Premium toolkit for US freelancers with connected hourly rate, fees, tax, income goal, and budget planning tools.",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Any"
       }
@@ -924,6 +924,329 @@
         .toolkit-pill:focus-visible{outline:2px solid var(--accent2);outline-offset:2px;border-color:var(--accent2)}
         .pill-icon{font-size:13px;line-height:1}
 
+        /* PUBLIC HOMEPAGE */
+        .site-home{max-width:1240px;margin:18px auto 0;display:grid;gap:16px}
+        .home-hero{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(320px,.92fr);gap:16px}
+        .home-hero-card,.home-panel-card,.home-tools-card,.home-flow-card,.home-trust-card,.site-footer-inner{
+            background:var(--surface);
+            border:1px solid var(--line);
+            border-radius:24px;
+            box-shadow:var(--shadow-sm);
+        }
+        .home-hero-card{
+            position:relative;
+            overflow:hidden;
+            padding:26px;
+            background:
+                radial-gradient(circle at top right,rgba(255,159,47,.18),transparent 32%),
+                linear-gradient(135deg,#fffdf9 0%,#fff7ed 55%,#ffffff 100%);
+        }
+        .home-hero-card::after{
+            content:"";
+            position:absolute;
+            inset:auto -48px -72px auto;
+            width:220px;
+            height:220px;
+            background:radial-gradient(circle,rgba(37,99,235,.10),transparent 66%);
+            pointer-events:none;
+        }
+        .home-kicker{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            padding:8px 12px;
+            border-radius:999px;
+            border:1px solid rgba(255,122,0,.16);
+            background:rgba(255,255,255,.78);
+            color:#b45309;
+            font-size:11px;
+            font-weight:900;
+            letter-spacing:.12em;
+            text-transform:uppercase;
+        }
+        .home-headline{
+            margin:16px 0 10px;
+            font-size:clamp(34px,5vw,60px);
+            line-height:.96;
+            letter-spacing:-.05em;
+            color:var(--text);
+            max-width:760px;
+        }
+        .home-sub{
+            margin:0;
+            max-width:720px;
+            color:var(--muted);
+            font-size:15px;
+            line-height:1.6;
+        }
+        .home-cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+        .home-cta{
+            min-height:50px;
+            padding:0 18px;
+            border-radius:16px;
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            text-decoration:none;
+            font-weight:900;
+            font-size:14px;
+            letter-spacing:-.01em;
+            transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;
+        }
+        .home-cta:hover{transform:translateY(-1px)}
+        .home-cta:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+        .home-cta.primary{
+            background:linear-gradient(135deg,var(--accent),var(--accent2));
+            color:#fff;
+            box-shadow:0 16px 32px rgba(255,122,0,.16);
+        }
+        .home-cta.secondary{
+            color:var(--text);
+            border:1px solid var(--line);
+            background:rgba(255,255,255,.86);
+        }
+        .home-pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+        .home-pill{
+            display:inline-flex;
+            align-items:center;
+            gap:7px;
+            min-height:34px;
+            padding:0 12px;
+            border-radius:999px;
+            background:rgba(255,255,255,.88);
+            border:1px solid var(--line);
+            color:var(--muted);
+            font-size:12px;
+            font-weight:700;
+        }
+        .home-panel-card{
+            padding:22px;
+            background:
+                radial-gradient(circle at top right,rgba(79,124,244,.18),transparent 36%),
+                linear-gradient(155deg,#0f172a 0%,#132442 58%,#1d4ed8 100%);
+            color:#fff;
+            display:grid;
+            gap:14px;
+        }
+        .home-panel-kicker{
+            font-size:11px;
+            font-weight:900;
+            letter-spacing:.12em;
+            text-transform:uppercase;
+            color:rgba(255,255,255,.72);
+        }
+        .home-panel-title{
+            margin:0;
+            font-size:30px;
+            line-height:1.02;
+            letter-spacing:-.05em;
+            max-width:360px;
+        }
+        .home-panel-copy{
+            margin:0;
+            color:rgba(255,255,255,.84);
+            font-size:14px;
+            line-height:1.55;
+            max-width:380px;
+        }
+        .home-panel-grid{
+            display:grid;
+            grid-template-columns:repeat(2,minmax(0,1fr));
+            gap:10px;
+        }
+        .home-stat{
+            border-radius:18px;
+            border:1px solid rgba(255,255,255,.12);
+            background:rgba(255,255,255,.10);
+            padding:14px;
+        }
+        .home-stat-k{
+            font-size:10px;
+            font-weight:900;
+            letter-spacing:.12em;
+            text-transform:uppercase;
+            color:rgba(255,255,255,.64);
+            margin-bottom:6px;
+        }
+        .home-stat-v{
+            font-size:24px;
+            font-weight:900;
+            letter-spacing:-.04em;
+            color:#fff;
+            margin-bottom:4px;
+        }
+        .home-stat-t{
+            font-size:12px;
+            line-height:1.45;
+            color:rgba(255,255,255,.80);
+        }
+        .home-strip{
+            border-top:1px solid rgba(255,255,255,.12);
+            padding-top:12px;
+            display:flex;
+            flex-wrap:wrap;
+            gap:8px;
+        }
+        .home-strip-pill{
+            display:inline-flex;
+            align-items:center;
+            min-height:30px;
+            padding:0 10px;
+            border-radius:999px;
+            background:rgba(255,255,255,.10);
+            border:1px solid rgba(255,255,255,.12);
+            color:rgba(255,255,255,.88);
+            font-size:11px;
+            font-weight:800;
+            letter-spacing:.02em;
+        }
+        .home-tools-card,.home-flow-card,.home-trust-card{padding:22px}
+        .home-section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+        .home-section-copy{max-width:640px;color:var(--muted);font-size:14px;line-height:1.55}
+        .home-tool-grid{
+            display:grid;
+            grid-template-columns:repeat(5,minmax(0,1fr));
+            gap:12px;
+        }
+        .home-tool-card{
+            display:flex;
+            flex-direction:column;
+            gap:12px;
+            min-height:220px;
+            padding:18px;
+            border-radius:20px;
+            border:1px solid var(--line);
+            background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(248,250,252,.92));
+            text-decoration:none;
+            color:inherit;
+            transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+        }
+        .home-tool-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+        .home-tool-card:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+        .home-tool-card.featured{border-color:rgba(255,122,0,.18);box-shadow:0 14px 28px rgba(255,122,0,.08)}
+        .home-tool-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+        .home-tool-badge{
+            display:inline-flex;
+            align-items:center;
+            min-height:28px;
+            padding:0 10px;
+            border-radius:999px;
+            font-size:10px;
+            font-weight:900;
+            letter-spacing:.12em;
+            text-transform:uppercase;
+            background:var(--accent-soft);
+            color:var(--accent);
+        }
+        .home-tool-icon{
+            width:40px;
+            height:40px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border-radius:14px;
+            background:rgba(15,23,42,.05);
+            font-size:19px;
+        }
+        .home-tool-title{margin:0;font-size:22px;line-height:1.04;letter-spacing:-.04em;color:var(--text)}
+        .home-tool-copy{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+        .home-tool-meta{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
+        .home-tool-meta span{
+            display:inline-flex;
+            align-items:center;
+            min-height:28px;
+            padding:0 10px;
+            border-radius:999px;
+            background:var(--surface-3);
+            border:1px solid var(--line-soft);
+            font-size:11px;
+            font-weight:700;
+            color:var(--muted);
+        }
+        .home-flow-grid{
+            display:grid;
+            grid-template-columns:repeat(5,minmax(0,1fr));
+            gap:12px;
+        }
+        .home-flow-step{
+            min-height:190px;
+            padding:18px;
+            border-radius:20px;
+            border:1px solid var(--line);
+            background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(248,250,252,.92));
+        }
+        .home-flow-num{
+            width:34px;
+            height:34px;
+            border-radius:999px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:linear-gradient(135deg,var(--accent),var(--accent2));
+            color:#fff;
+            font-size:13px;
+            font-weight:900;
+            margin-bottom:12px;
+            box-shadow:0 10px 22px rgba(255,122,0,.16);
+        }
+        .home-flow-title{margin:0 0 8px;font-size:19px;line-height:1.05;letter-spacing:-.03em;color:var(--text)}
+        .home-flow-copy{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+        .home-trust-grid{
+            display:grid;
+            grid-template-columns:repeat(4,minmax(0,1fr));
+            gap:12px;
+        }
+        .home-trust-item{
+            padding:18px;
+            border-radius:18px;
+            background:var(--surface-3);
+            border:1px solid var(--line-soft);
+        }
+        .home-trust-title{margin:0 0 6px;font-size:18px;line-height:1.08;letter-spacing:-.03em;color:var(--text)}
+        .home-trust-copy{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+        .home-calc-lead{
+            max-width:1240px;
+            margin:16px auto 0;
+            padding:0 4px;
+        }
+        .home-calc-card{
+            background:linear-gradient(135deg,#fff,#f8fbff);
+            border:1px solid var(--line);
+            border-radius:22px;
+            padding:18px 20px;
+            box-shadow:var(--shadow-sm);
+        }
+        .home-calc-card .eyebrow{margin-bottom:6px}
+        .home-calc-copy{margin:0;color:var(--muted);font-size:14px;line-height:1.55;max-width:720px}
+        #mainCard{scroll-margin-top:92px}
+        .site-footer{max-width:1240px;margin:18px auto 30px}
+        .site-footer-inner{padding:20px 22px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:18px}
+        .site-footer-title{margin:0 0 8px;font-size:24px;line-height:1.04;letter-spacing:-.04em;color:var(--text)}
+        .site-footer-copy{margin:0;color:var(--muted);font-size:14px;line-height:1.6;max-width:640px}
+        .site-footer-links{display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start}
+        .site-footer-links a{
+            display:inline-flex;
+            align-items:center;
+            min-height:36px;
+            padding:0 12px;
+            border-radius:999px;
+            border:1px solid var(--line);
+            background:var(--surface-3);
+            color:var(--muted);
+            text-decoration:none;
+            font-size:12px;
+            font-weight:800;
+        }
+        .site-footer-links a:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+        .site-footer-note{
+            margin-top:12px;
+            padding-top:12px;
+            border-top:1px solid var(--line-soft);
+            color:var(--muted2);
+            font-size:12px;
+            line-height:1.55;
+        }
+
         /* UTILITY */
         .mt-4{margin-top:4px}.mt-8{margin-top:8px}.mt-14{margin-top:14px}
         .mb-0{margin-bottom:0}.mb-4{margin-bottom:4px}.mb-10{margin-bottom:10px}
@@ -933,6 +1256,10 @@
         /* RESPONSIVE */
         @media(max-width:1020px){
             #panelFwd .grid,#panelRev .rev-main-grid{grid-template-columns:1fr}
+            .home-hero{grid-template-columns:1fr}
+            .home-tool-grid,.home-flow-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+            .home-trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+            .site-footer-inner{grid-template-columns:1fr}
         }
         @media(max-width:760px){
             body{padding:12px}
@@ -943,11 +1270,15 @@
             .head,.rev-card-head,.rev-hero-top,.rev-hero-row{flex-direction:column;align-items:flex-start}
             .help,.rev-card-help{text-align:left;max-width:none}
             .actual-banner .right,.tax-banner-right{text-align:left}
+            .home-hero-card,.home-panel-card,.home-tools-card,.home-flow-card,.home-trust-card,.site-footer-inner,.home-calc-card{padding:18px}
+            .home-headline{font-size:36px}
+            .home-tool-grid,.home-flow-grid,.home-trust-grid{grid-template-columns:1fr 1fr}
         }
         @media(max-width:600px){
             .toolkit-nav{margin-top:62px}
             .toolkit-pill{font-size:11px;padding:7px 11px}
             .dm-btn{top:12px;right:12px;padding:6px 12px;font-size:12px}
+            .home-panel-grid{grid-template-columns:1fr}
         }
         @media(max-width:560px){
             .input-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
@@ -961,6 +1292,7 @@
             .hero-big{font-size:34px}
             .hero-sub{font-size:12px;max-width:none}
             .mini-chip{padding:6px 9px;font-size:10px}
+            .home-cta{width:100%}
         }
         @media(max-width:480px){
             .stat-grid,.tax-grid,.action-grid,.actual-grid,.rev-result-grid{grid-template-columns:1fr}
@@ -970,6 +1302,8 @@
             .actual-banner .right .big,.tax-banner-right .big{font-size:24px}
             .rev-result-cell .value{font-size:24px}
             .rev-result-hero.green .rev-result-cell .value{font-size:19px}
+            .home-tool-grid,.home-flow-grid,.home-trust-grid{grid-template-columns:1fr}
+            .home-headline{font-size:32px}
         }
         @media(max-width:380px){
             .input-grid{gap:7px}
@@ -997,6 +1331,214 @@
 
 <div id="app">
     <button type="button" class="dm-btn" id="dmBtn"><span id="dmIcon">☀️</span><span id="dmLbl">Light</span></button>
+
+    <section class="site-home" aria-label="Homepage overview">
+        <div class="home-hero">
+            <div class="home-hero-card">
+                <div class="home-kicker">USA Freelance Calculator Toolkit</div>
+                <h1 class="home-headline">One premium toolkit for freelance rates, fees, tax, goals, and budgeting.</h1>
+                <p class="home-sub">Use each tool separately or move through one connected workflow. Start with the hourly calculator below, or jump directly into the exact tool you need.</p>
+                <div class="home-cta-row">
+                    <a class="home-cta primary" href="#mainCard">Start with Hourly Rate</a>
+                    <a class="home-cta secondary" href="#homeTools">See All 5 Tools</a>
+                </div>
+                <div class="home-pill-row">
+                    <span class="home-pill">⚡ Instant live calculation</span>
+                    <span class="home-pill">🧠 Connected toolkit handoff</span>
+                    <span class="home-pill">💾 Saved in your browser</span>
+                    <span class="home-pill">🖼️ PNG / PDF exports</span>
+                    <span class="home-pill">🇺🇸 Built for US freelancers</span>
+                </div>
+            </div>
+            <div class="home-panel-card">
+                <div class="home-panel-kicker">Toolkit Summary</div>
+                <h2 class="home-panel-title">Start fast, then go deeper only when you need to.</h2>
+                <p class="home-panel-copy">The homepage keeps Hourly Rate as the main entry point, while the rest of the toolkit stays one tap away for platform fees, tax planning, income goals, and budget control.</p>
+                <div class="home-panel-grid">
+                    <div class="home-stat">
+                        <div class="home-stat-k">Connected Tools</div>
+                        <div class="home-stat-v">5</div>
+                        <div class="home-stat-t">Built to work separately or as one guided flow.</div>
+                    </div>
+                    <div class="home-stat">
+                        <div class="home-stat-k">Primary Start</div>
+                        <div class="home-stat-v">Hourly</div>
+                        <div class="home-stat-t">Fastest way to begin the toolkit without friction.</div>
+                    </div>
+                    <div class="home-stat">
+                        <div class="home-stat-k">Export Ready</div>
+                        <div class="home-stat-v">PDF</div>
+                        <div class="home-stat-t">Reports and image exports are available inside the tools.</div>
+                    </div>
+                    <div class="home-stat">
+                        <div class="home-stat-k">State</div>
+                        <div class="home-stat-v">Live</div>
+                        <div class="home-stat-t">Current GitHub website structure is ready for public cleanup and polish.</div>
+                    </div>
+                </div>
+                <div class="home-strip">
+                    <span class="home-strip-pill">Hourly → Fees → Tax → Goal → Budget</span>
+                    <span class="home-strip-pill">Standalone direct links included</span>
+                    <span class="home-strip-pill">No account required</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-tools-card" id="homeTools">
+            <div class="home-section-head">
+                <div>
+                    <div class="eyebrow">Tool Access</div>
+                    <div class="title" style="margin-top:4px;">Use every tool directly</div>
+                </div>
+                <div class="home-section-copy">The toolkit is designed for two styles of use: guided flow from Hourly Rate, or direct access to any tool when you already know what you need.</div>
+            </div>
+            <div class="home-tool-grid">
+                <a class="home-tool-card featured" href="#mainCard">
+                    <div class="home-tool-top">
+                        <span class="home-tool-badge">Start Here</span>
+                        <span class="home-tool-icon" aria-hidden="true">⏱</span>
+                    </div>
+                    <div>
+                        <h3 class="home-tool-title">Hourly Rate</h3>
+                        <p class="home-tool-copy">Set your work profile, billable time, and tax view to calculate rate and earnings instantly.</p>
+                    </div>
+                    <div class="home-tool-meta">
+                        <span>Forward + reverse</span>
+                        <span>Toolkit entry</span>
+                    </div>
+                </a>
+                <a class="home-tool-card" href="platform-fee-calculator.html">
+                    <div class="home-tool-top">
+                        <span class="home-tool-badge">Standalone</span>
+                        <span class="home-tool-icon" aria-hidden="true">💸</span>
+                    </div>
+                    <div>
+                        <h3 class="home-tool-title">Platform Fees</h3>
+                        <p class="home-tool-copy">See what the client pays, what you keep, and what should move into tax planning.</p>
+                    </div>
+                    <div class="home-tool-meta">
+                        <span>Client pays</span>
+                        <span>Pre-tax keep</span>
+                    </div>
+                </a>
+                <a class="home-tool-card" href="tax-estimator.html">
+                    <div class="home-tool-top">
+                        <span class="home-tool-badge">Standalone</span>
+                        <span class="home-tool-icon" aria-hidden="true">🏛️</span>
+                    </div>
+                    <div>
+                        <h3 class="home-tool-title">Tax Estimator</h3>
+                        <p class="home-tool-copy">Estimate federal and self-employment tax with a serious finance-first layout.</p>
+                    </div>
+                    <div class="home-tool-meta">
+                        <span>Federal + SE tax</span>
+                        <span>Quarterly view</span>
+                    </div>
+                </a>
+                <a class="home-tool-card" href="income-goal-planner.html">
+                    <div class="home-tool-top">
+                        <span class="home-tool-badge">Planner</span>
+                        <span class="home-tool-icon" aria-hidden="true">🎯</span>
+                    </div>
+                    <div>
+                        <h3 class="home-tool-title">Income Goal</h3>
+                        <p class="home-tool-copy">Turn monthly or yearly targets into required gross income and planning assumptions.</p>
+                    </div>
+                    <div class="home-tool-meta">
+                        <span>Monthly / yearly</span>
+                        <span>Baseline / goal</span>
+                    </div>
+                </a>
+                <a class="home-tool-card" href="budget-planner.html">
+                    <div class="home-tool-top">
+                        <span class="home-tool-badge">Final Sink</span>
+                        <span class="home-tool-icon" aria-hidden="true">📊</span>
+                    </div>
+                    <div>
+                        <h3 class="home-tool-title">Budget Planner</h3>
+                        <p class="home-tool-copy">Finish with budget structure, tax reserve, runway, presets, and export-ready planning.</p>
+                    </div>
+                    <div class="home-tool-meta">
+                        <span>Runway</span>
+                        <span>Budget report</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="home-flow-card">
+            <div class="home-section-head">
+                <div>
+                    <div class="eyebrow">Connected Flow</div>
+                    <div class="title" style="margin-top:4px;">How the toolkit works together</div>
+                </div>
+                <div class="home-section-copy">Each step can hand off the right amount to the next tool. Latest shared data replaces old data, so the flow stays clean without forcing a manual reset.</div>
+            </div>
+            <div class="home-flow-grid">
+                <div class="home-flow-step">
+                    <div class="home-flow-num">1</div>
+                    <h3 class="home-flow-title">Hourly Rate</h3>
+                    <p class="home-flow-copy">Start with your rate, schedule, and billable assumptions to create a realistic earnings base.</p>
+                </div>
+                <div class="home-flow-step">
+                    <div class="home-flow-num">2</div>
+                    <h3 class="home-flow-title">Platform Fees</h3>
+                    <p class="home-flow-copy">See the difference between what the client pays and what you actually keep before tax.</p>
+                </div>
+                <div class="home-flow-step">
+                    <div class="home-flow-num">3</div>
+                    <h3 class="home-flow-title">Tax Estimator</h3>
+                    <p class="home-flow-copy">Estimate federal and self-employment tax using the gross or pre-tax amount from the previous step.</p>
+                </div>
+                <div class="home-flow-step">
+                    <div class="home-flow-num">4</div>
+                    <h3 class="home-flow-title">Income Goal</h3>
+                    <p class="home-flow-copy">Map imported gross context into goal planning without creating double-tax confusion.</p>
+                </div>
+                <div class="home-flow-step">
+                    <div class="home-flow-num">5</div>
+                    <h3 class="home-flow-title">Budget Planner</h3>
+                    <p class="home-flow-copy">Finish with a structured budget, reserve target, runway snapshot, and final export layer.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-trust-card">
+            <div class="home-section-head">
+                <div>
+                    <div class="eyebrow">Why This Feels Premium</div>
+                    <div class="title" style="margin-top:4px;">Clear trust signals without bloating the experience</div>
+                </div>
+                <div class="home-section-copy">The toolkit stays light on GitHub Pages, keeps state in the browser, and gives direct exports without forcing signups or cluttering the flow.</div>
+            </div>
+            <div class="home-trust-grid">
+                <div class="home-trust-item">
+                    <h3 class="home-trust-title">Instant by default</h3>
+                    <p class="home-trust-copy">Calculations update live as you type, so the site feels like a real product instead of a basic static form.</p>
+                </div>
+                <div class="home-trust-item">
+                    <h3 class="home-trust-title">Saved locally</h3>
+                    <p class="home-trust-copy">Tool state and toolkit handoff live in your browser, which keeps repeat usage fast and friction-free.</p>
+                </div>
+                <div class="home-trust-item">
+                    <h3 class="home-trust-title">Exports included</h3>
+                    <p class="home-trust-copy">PDF, image, and summary actions stay available inside the tools for shareable planning output.</p>
+                </div>
+                <div class="home-trust-item">
+                    <h3 class="home-trust-title">Standalone or connected</h3>
+                    <p class="home-trust-copy">Each tool can work on its own, but the toolkit flow is there when you want one guided sequence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="home-calc-lead">
+        <div class="home-calc-card">
+            <div class="eyebrow">Toolkit Start Point</div>
+            <div class="title" style="margin-top:4px;">Hourly Rate Calculator</div>
+            <p class="home-calc-copy">This is still the main entry into the connected toolkit flow. If you want the guided sequence, start here. If not, the tool cards above let you jump straight to the exact calculator you need.</p>
+        </div>
+    </div>
 
     <div id="mainCard">
         <div class="tabs">
@@ -1407,6 +1949,25 @@ You can set goals per year, month, or week.">What's this?</button>
         </div>
     </div>
 </div>
+
+<footer class="site-footer">
+    <div class="site-footer-inner">
+        <div>
+            <h2 class="site-footer-title">USA Freelance Calculator Toolkit</h2>
+            <p class="site-footer-copy">A fast GitHub-hosted toolkit for US freelancers who want premium planning tools without signup friction. Use each calculator separately, or move through the connected workflow from rate to budget.</p>
+            <div class="site-footer-note">Current public website focus: clean toolkit access, direct tool links, browser-saved usage, and lightweight performance. Legal/trust pages and launch SEO foundation come in the next website phases.</div>
+        </div>
+        <div class="site-footer-links" aria-label="Toolkit links">
+            <a href="index.html">Hourly Rate</a>
+            <a href="platform-fee-calculator.html">Platform Fees</a>
+            <a href="tax-estimator.html">Tax Estimator</a>
+            <a href="income-goal-planner.html">Goal Planner</a>
+            <a href="budget-planner.html">Budget Planner</a>
+            <a href="#homeTools">All Tools</a>
+            <a href="#mainCard">Start with Hourly</a>
+        </div>
+    </div>
+</footer>
 
 <!-- RESULTS CONTAINER (shared) -->
 <div id="resContainer" style="display:none">

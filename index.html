@@ -1026,7 +1026,7 @@
                 linear-gradient(155deg,#0f172a 0%,#132442 58%,#1d4ed8 100%);
             color:#fff;
             display:grid;
-            gap:14px;
+            gap:12px;
         }
         .home-panel-kicker{
             font-size:11px;
@@ -1049,18 +1049,74 @@
             line-height:1.55;
             max-width:380px;
         }
-        .home-panel-grid{
+        .home-preview-list{
             display:grid;
-            grid-template-columns:repeat(2,minmax(0,1fr));
-            gap:10px;
+            grid-template-columns:1fr;
+            gap:8px;
         }
-        .home-stat{
-            border-radius:18px;
+        .home-preview-link{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:12px;
+            min-height:44px;
+            padding:0 14px;
+            border-radius:16px;
             border:1px solid rgba(255,255,255,.12);
             background:rgba(255,255,255,.10);
-            padding:14px;
+            color:#fff;
+            text-decoration:none;
+            transition:transform .18s ease,background .18s ease,border-color .18s ease;
         }
-        .home-stat-k{
+        .home-preview-link:hover{transform:translateY(-1px);background:rgba(255,255,255,.12)}
+        .home-preview-link:focus-visible{outline:2px solid rgba(255,255,255,.65);outline-offset:3px}
+        .home-preview-left{display:flex;align-items:center;gap:10px;min-width:0}
+        .home-preview-icon{
+            width:34px;
+            height:34px;
+            border-radius:12px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:rgba(255,255,255,.12);
+            font-size:16px;
+            flex:0 0 auto;
+        }
+        .home-preview-text{display:grid;gap:2px;min-width:0}
+        .home-preview-name{
+            font-size:14px;
+            font-weight:900;
+            letter-spacing:-.02em;
+            color:#fff;
+        }
+        .home-preview-meta{
+            font-size:11px;
+            color:rgba(255,255,255,.72);
+            line-height:1.35;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+        .home-preview-arrow{
+            color:rgba(255,255,255,.82);
+            font-size:15px;
+            font-weight:900;
+            flex:0 0 auto;
+        }
+        .home-panel-notes{
+            display:grid;
+            grid-template-columns:repeat(3,minmax(0,1fr));
+            gap:10px;
+            border-top:1px solid rgba(255,255,255,.12);
+            padding-top:12px;
+        }
+        .home-panel-note{
+            border-radius:16px;
+            border:1px solid rgba(255,255,255,.10);
+            background:rgba(255,255,255,.08);
+            padding:12px;
+        }
+        .home-panel-note-k{
             font-size:10px;
             font-weight:900;
             letter-spacing:.12em;
@@ -1068,14 +1124,14 @@
             color:rgba(255,255,255,.64);
             margin-bottom:6px;
         }
-        .home-stat-v{
-            font-size:24px;
+        .home-panel-note-v{
+            font-size:17px;
             font-weight:900;
-            letter-spacing:-.04em;
+            letter-spacing:-.03em;
             color:#fff;
             margin-bottom:4px;
         }
-        .home-stat-t{
+        .home-panel-note-t{
             font-size:12px;
             line-height:1.45;
             color:rgba(255,255,255,.80);
@@ -1218,6 +1274,30 @@
         }
         .home-calc-card .eyebrow{margin-bottom:6px}
         .home-calc-copy{margin:0;color:var(--muted);font-size:14px;line-height:1.55;max-width:720px}
+        .home-calc-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+        .home-calc-link{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            min-height:42px;
+            padding:0 14px;
+            border-radius:14px;
+            text-decoration:none;
+            font-size:13px;
+            font-weight:900;
+            letter-spacing:-.01em;
+        }
+        .home-calc-link.primary{
+            background:linear-gradient(135deg,var(--accent),var(--accent2));
+            color:#fff;
+            box-shadow:0 12px 22px rgba(255,122,0,.16);
+        }
+        .home-calc-link.secondary{
+            color:var(--text);
+            background:var(--surface-3);
+            border:1px solid var(--line);
+        }
+        .home-calc-link:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
         #mainCard{scroll-margin-top:92px}
         .site-footer{max-width:1240px;margin:18px auto 30px}
         .site-footer-inner{padding:20px 22px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:18px}
@@ -1260,6 +1340,7 @@
             .home-tool-grid,.home-flow-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
             .home-trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
             .site-footer-inner{grid-template-columns:1fr}
+            .home-panel-notes{grid-template-columns:1fr}
         }
         @media(max-width:760px){
             body{padding:12px}
@@ -1278,7 +1359,6 @@
             .toolkit-nav{margin-top:62px}
             .toolkit-pill{font-size:11px;padding:7px 11px}
             .dm-btn{top:12px;right:12px;padding:6px 12px;font-size:12px}
-            .home-panel-grid{grid-template-columns:1fr}
         }
         @media(max-width:560px){
             .input-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
@@ -1293,6 +1373,7 @@
             .hero-sub{font-size:12px;max-width:none}
             .mini-chip{padding:6px 9px;font-size:10px}
             .home-cta{width:100%}
+            .home-calc-link{width:100%}
         }
         @media(max-width:480px){
             .stat-grid,.tax-grid,.action-grid,.actual-grid,.rev-result-grid{grid-template-columns:1fr}
@@ -1351,29 +1432,76 @@
                 </div>
             </div>
             <div class="home-panel-card">
-                <div class="home-panel-kicker">Toolkit Summary</div>
-                <h2 class="home-panel-title">Start fast, then go deeper only when you need to.</h2>
-                <p class="home-panel-copy">The homepage keeps Hourly Rate as the main entry point, while the rest of the toolkit stays one tap away for platform fees, tax planning, income goals, and budget control.</p>
-                <div class="home-panel-grid">
-                    <div class="home-stat">
-                        <div class="home-stat-k">Connected Tools</div>
-                        <div class="home-stat-v">5</div>
-                        <div class="home-stat-t">Built to work separately or as one guided flow.</div>
+                <div class="home-panel-kicker">5 Tools • One Workflow</div>
+                <h2 class="home-panel-title">Open any tool directly, or stay in the guided sequence.</h2>
+                <p class="home-panel-copy">Above the fold, the homepage now stays tighter and more hub-like. The first full tool still starts below, but direct links stay visible immediately.</p>
+                <div class="home-preview-list" aria-label="Quick access to all tools">
+                    <a class="home-preview-link" href="#mainCard">
+                        <span class="home-preview-left">
+                            <span class="home-preview-icon" aria-hidden="true">⏱</span>
+                            <span class="home-preview-text">
+                                <span class="home-preview-name">Hourly Rate</span>
+                                <span class="home-preview-meta">Primary start point for the connected toolkit</span>
+                            </span>
+                        </span>
+                        <span class="home-preview-arrow" aria-hidden="true">↘</span>
+                    </a>
+                    <a class="home-preview-link" href="platform-fee-calculator.html">
+                        <span class="home-preview-left">
+                            <span class="home-preview-icon" aria-hidden="true">💸</span>
+                            <span class="home-preview-text">
+                                <span class="home-preview-name">Platform Fees</span>
+                                <span class="home-preview-meta">Client pays vs what you keep before tax</span>
+                            </span>
+                        </span>
+                        <span class="home-preview-arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a class="home-preview-link" href="tax-estimator.html">
+                        <span class="home-preview-left">
+                            <span class="home-preview-icon" aria-hidden="true">🏛️</span>
+                            <span class="home-preview-text">
+                                <span class="home-preview-name">Tax Estimator</span>
+                                <span class="home-preview-meta">Federal + self-employment estimate</span>
+                            </span>
+                        </span>
+                        <span class="home-preview-arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a class="home-preview-link" href="income-goal-planner.html">
+                        <span class="home-preview-left">
+                            <span class="home-preview-icon" aria-hidden="true">🎯</span>
+                            <span class="home-preview-text">
+                                <span class="home-preview-name">Income Goal</span>
+                                <span class="home-preview-meta">Translate targets into required gross planning</span>
+                            </span>
+                        </span>
+                        <span class="home-preview-arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a class="home-preview-link" href="budget-planner.html">
+                        <span class="home-preview-left">
+                            <span class="home-preview-icon" aria-hidden="true">📊</span>
+                            <span class="home-preview-text">
+                                <span class="home-preview-name">Budget Planner</span>
+                                <span class="home-preview-meta">Final sink for reserve, runway, and report export</span>
+                            </span>
+                        </span>
+                        <span class="home-preview-arrow" aria-hidden="true">→</span>
+                    </a>
+                </div>
+                <div class="home-panel-notes">
+                    <div class="home-panel-note">
+                        <div class="home-panel-note-k">Start Point</div>
+                        <div class="home-panel-note-v">Hourly First</div>
+                        <div class="home-panel-note-t">Current toolkit logic still begins from the hourly calculator.</div>
                     </div>
-                    <div class="home-stat">
-                        <div class="home-stat-k">Primary Start</div>
-                        <div class="home-stat-v">Hourly</div>
-                        <div class="home-stat-t">Fastest way to begin the toolkit without friction.</div>
+                    <div class="home-panel-note">
+                        <div class="home-panel-note-k">Handoff</div>
+                        <div class="home-panel-note-v">Browser Saved</div>
+                        <div class="home-panel-note-t">Latest shared amount replaces old toolkit data automatically.</div>
                     </div>
-                    <div class="home-stat">
-                        <div class="home-stat-k">Export Ready</div>
-                        <div class="home-stat-v">PDF</div>
-                        <div class="home-stat-t">Reports and image exports are available inside the tools.</div>
-                    </div>
-                    <div class="home-stat">
-                        <div class="home-stat-k">State</div>
-                        <div class="home-stat-v">Live</div>
-                        <div class="home-stat-t">Current GitHub website structure is ready for public cleanup and polish.</div>
+                    <div class="home-panel-note">
+                        <div class="home-panel-note-k">Usage Style</div>
+                        <div class="home-panel-note-v">Standalone + Flow</div>
+                        <div class="home-panel-note-t">Jump directly into any tool without losing the full connected path.</div>
                     </div>
                 </div>
                 <div class="home-strip">
@@ -1535,8 +1663,12 @@
     <div class="home-calc-lead">
         <div class="home-calc-card">
             <div class="eyebrow">Toolkit Start Point</div>
-            <div class="title" style="margin-top:4px;">Hourly Rate Calculator</div>
-            <p class="home-calc-copy">This is still the main entry into the connected toolkit flow. If you want the guided sequence, start here. If not, the tool cards above let you jump straight to the exact calculator you need.</p>
+            <div class="title" style="margin-top:4px;">Open the first full tool below</div>
+            <p class="home-calc-copy">From this point onward, the page shifts from toolkit hub into the full Hourly Rate Calculator. The toolkit landing stays above; the detailed first tool starts here.</p>
+            <div class="home-calc-actions">
+                <a class="home-calc-link primary" href="#mainCard">Open Hourly Calculator</a>
+                <a class="home-calc-link secondary" href="#homeTools">Back to Toolkit Links</a>
+            </div>
         </div>
     </div>
 

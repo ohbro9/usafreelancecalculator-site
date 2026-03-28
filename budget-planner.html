@@ -1267,6 +1267,7 @@
     line-height: 1.52;
   }
   @media(max-width: 640px) {
+    .tool-access-card { display: none; }
     .tool-access-actions { grid-template-columns: 1fr; }
   }
 
@@ -2321,11 +2322,12 @@
     <p class="tool-access-copy">Budget Planner works as a standalone budgeting tool, but it also serves as the final sink for the connected toolkit after Goal Planner hands off a gross target.</p>
     <div class="tool-access-actions">
       <a class="tool-access-link" href="index.html#homeTools">Toolkit Home</a>
-      <a class="tool-access-link" href="income-goal-planner.html">Back: Income Goal</a>
+      <a class="tool-access-link" href="income-goal-planner.html#toolStart">Back: Income Goal</a>
       <a class="tool-access-link primary" href="hourly-rate-calculator.html#mainCard">Start at Hourly</a>
     </div>
     <div class="tool-access-meta">Come here directly for budget control, or use it as the last step after rate, fee, tax, and goal planning are already connected.</div>
   </section>
+  <div id="toolStart" aria-hidden="true"></div>
 
   <div class="budget-toolkit-card is-hidden" id="budgetToolkitCard" aria-live="polite">
     <div class="budget-toolkit-kicker" id="budgetToolkitKicker">Imported Goal Gross</div>
@@ -4202,7 +4204,7 @@ function goBackToIncomeGoal() {
     const moved = window.UFCToolkit.goBack('budget_planner');
     if (moved) return;
   }
-  window.location.href = 'income-goal-planner.html';
+  window.location.href = 'income-goal-planner.html#toolStart';
 }
 
 function exportToolkitReport() {

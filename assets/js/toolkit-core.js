@@ -12,6 +12,13 @@
     { id:'income_goal', file:'income-goal-planner.html', label:'Income Goal Planner' },
     { id:'budget_planner', file:'budget-planner.html', label:'Budget Planner' }
   ];
+  var FLOW_HASH_BY_ID = {
+    hourly_rate: '#mainCard',
+    platform_fee: '#toolStart',
+    tax_estimator: '#toolStart',
+    income_goal: '#toolStart',
+    budget_planner: '#toolStart'
+  };
 
   var STEP_BY_ID = {};
   var STEP_BY_FILE = {};
@@ -100,6 +107,23 @@
 
   function createSessionId(){
     return 'tk_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2,8);
+  }
+
+  function applyHashScroll(){
+    var hash = window.location && window.location.hash;
+    if(!hash || hash === '#')return;
+    var target = null;
+    try{
+      target = window.document.querySelector(hash);
+    }catch(e){
+      target = null;
+    }
+    if(!target || typeof target.scrollIntoView !== 'function')return;
+    function forceScroll(){
+      try{target.scrollIntoView({ behavior:'auto', block:'start' });}catch(e){}
+    }
+    window.setTimeout(forceScroll, 80);
+    window.setTimeout(forceScroll, 320);
   }
 
   function sanitizePrimitiveMap(obj){
@@ -277,6 +301,13 @@
     return step ? step.file : '';
   }
 
+  function getToolFlowLink(toolId){
+    var normalized = normalizeToolId(toolId);
+    var link = getToolLink(normalized);
+    if(!link)return '';
+    return link + (FLOW_HASH_BY_ID[normalized] || '');
+  }
+
   function getToolLabel(toolId){
     var step = STEP_BY_ID[normalizeToolId(toolId)];
     return step ? step.label : 'Toolkit';
@@ -308,15 +339,21 @@
     return link;
   }
 
+  function goToToolFlow(toolId){
+    var link = getToolFlowLink(toolId);
+    if(link)window.location.href = link;
+    return link;
+  }
+
   function goNext(toolId){
     var nextId = getNextToolId(toolId);
-    if(nextId)goToTool(nextId);
+    if(nextId)goToToolFlow(nextId);
     return nextId;
   }
 
   function goBack(toolId){
     var previousId = getPreviousToolId(toolId);
-    if(previousId)goToTool(previousId);
+    if(previousId)goToToolFlow(previousId);
     return previousId;
   }
 
@@ -332,12 +369,21 @@
     getFreshImport: getFreshImport,
     markImportApplied: markImportApplied,
     getToolLink: getToolLink,
+    getToolFlowLink: getToolFlowLink,
     getToolLabel: getToolLabel,
     getNextToolId: getNextToolId,
     getPreviousToolId: getPreviousToolId,
     goToTool: goToTool,
+    goToToolFlow: goToToolFlow,
     goNext: goNext,
     goBack: goBack,
     normalizeToolId: normalizeToolId
   };
+
+  if(window.document && window.document.readyState === 'loading'){
+    window.document.addEventListener('DOMContentLoaded', applyHashScroll, { once:true });
+  }else{
+    applyHashScroll();
+  }
+  window.addEventListener('load', applyHashScroll, { once:true });
 })(window);

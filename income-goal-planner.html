@@ -556,6 +556,7 @@
       line-height:1.52;
     }
     @media (max-width: 640px){
+      .tool-access-card{display:none;}
       .toolkit-next-actions{grid-template-columns:1fr;}
     }
 
@@ -2111,11 +2112,12 @@
         </div>
         <div class="tool-access-actions">
           <a class="btn btn-secondary" href="index.html#homeTools">Toolkit Home</a>
-          <a class="btn btn-secondary" href="tax-estimator.html">Back: Tax Estimator</a>
-          <a class="btn btn-primary" href="budget-planner.html">Next: Budget Planner</a>
+          <a class="btn btn-secondary" href="tax-estimator.html#toolStart">Back: Tax Estimator</a>
+          <a class="btn btn-primary" href="budget-planner.html#toolStart">Next: Budget Planner</a>
         </div>
         <div class="tool-access-meta">Direct use keeps the planner self-contained, while toolkit mode can still bring in gross context without replacing your goal automatically.</div>
       </section>
+      <div id="toolStart" aria-hidden="true"></div>
 
       <!-- MODE PRESETS -->
       <section class="mode-zone">
@@ -4522,7 +4524,7 @@
 	            return;
 	          }
 	        }
-	        window.location.href = 'budget-planner.html';
+	        window.location.href = 'budget-planner.html#toolStart';
 	      }
 
 	      function goBackToTaxTool() {
@@ -4530,7 +4532,7 @@
 	          const moved = window.UFCToolkit.goBack('income_goal');
 	          if (moved) return;
 	        }
-	        window.location.href = 'tax-estimator.html';
+	        window.location.href = 'tax-estimator.html#toolStart';
 	      }
 
 	      function collectPersistedState() {

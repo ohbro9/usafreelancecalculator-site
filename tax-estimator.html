@@ -550,6 +550,7 @@
     .tooltip-wrap:hover .tooltip-box { display: block; }
   }
   @media (max-width: 768px) {
+    .tool-access-card { display: none; }
     .tooltip-box {
       position: fixed;
       left: 14px;
@@ -1296,11 +1297,12 @@
     </div>
     <div class="tool-access-actions">
       <a class="tool-access-link" href="index.html#homeTools">Toolkit Home</a>
-      <a class="tool-access-link" href="platform-fee-calculator.html">Back: Platform Fees</a>
-      <a class="tool-access-link primary" href="income-goal-planner.html">Next: Income Goal</a>
+      <a class="tool-access-link" href="platform-fee-calculator.html#toolStart">Back: Platform Fees</a>
+      <a class="tool-access-link primary" href="income-goal-planner.html#toolStart">Next: Income Goal</a>
     </div>
     <div class="tool-access-meta">Direct use works for standalone tax planning, while shared toolkit amounts can still auto-fill the income side when fresh data exists.</div>
   </section>
+  <div id="toolStart" aria-hidden="true"></div>
 
   <div class="desktop-layout">
     <div class="desktop-left">
@@ -3496,7 +3498,7 @@ function goNextTool() {
     });
   }
   try { localStorage.setItem(TOOLKIT_KEY, JSON.stringify(payload)); } catch(e) {}
-  window.location.href = 'income-goal-planner.html';
+  window.location.href = 'income-goal-planner.html#toolStart';
 }
 
 function goBackTool() {
@@ -3504,7 +3506,7 @@ function goBackTool() {
     const moved = window.UFCToolkit.goBack('tax_estimator');
     if (moved) return;
   }
-  window.location.href = 'platform-fee-calculator.html';
+  window.location.href = 'platform-fee-calculator.html#toolStart';
 }
 
 // ─── TOOLKIT IMPORT LOGIC ─────────────────────────────────────────────────

@@ -6,7 +6,7 @@
   var LEGACY_SHARED_KEY = 'UFC_SHARED';
 
   var STEPS = [
-    { id:'hourly_rate', file:'index.html', label:'Hourly Rate Calculator' },
+    { id:'hourly_rate', file:'hourly-rate-calculator.html', label:'Hourly Rate Calculator' },
     { id:'platform_fee', file:'platform-fee-calculator.html', label:'Platform Fee Calculator' },
     { id:'tax_estimator', file:'tax-estimator.html', label:'Freelancer Tax Estimator' },
     { id:'income_goal', file:'income-goal-planner.html', label:'Income Goal Planner' },
@@ -18,7 +18,8 @@
   for(var i=0;i<STEPS.length;i++){
     STEP_BY_ID[STEPS[i].id] = STEPS[i];
     STEP_BY_FILE[STEPS[i].file] = STEPS[i];
-    if(STEPS[i].file === 'index.html'){
+    if(STEPS[i].id === 'hourly_rate'){
+      STEP_BY_FILE['index.html'] = STEPS[i];
       STEP_BY_FILE[''] = STEPS[i];
       STEP_BY_FILE['/'] = STEPS[i];
     }

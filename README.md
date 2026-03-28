@@ -7,7 +7,8 @@ QA reports, and working docs are maintained outside the public Pages path.
 
 ## Live Structure
 
-- `/` -> Toolkit homepage and Hourly Rate start point
+- `/` -> Toolkit homepage
+- `/hourly-rate-calculator.html` -> Hourly Rate Calculator
 - `/platform-fee-calculator.html` -> Platform Fee Calculator
 - `/tax-estimator.html` -> Tax Estimator
 - `/income-goal-planner.html` -> Income Goal Planner
@@ -16,6 +17,7 @@ QA reports, and working docs are maintained outside the public Pages path.
 ## Project Layout
 
 - `index.html`
+- `hourly-rate-calculator.html`
 - `platform-fee-calculator.html`
 - `tax-estimator.html`
 - `income-goal-planner.html`

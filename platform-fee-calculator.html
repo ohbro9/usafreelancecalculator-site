@@ -2132,7 +2132,7 @@
         <div class="pfc-access-actions">
           <a class="pfc-access-link" href="index.html#homeTools">Toolkit Home</a>
           <a class="pfc-access-link" href="hourly-rate-calculator.html#mainCard">Open Hourly Start</a>
-          <a class="pfc-access-link primary" href="tax-estimator.html#toolStart">Next: Tax Estimator</a>
+          <a class="pfc-access-link primary" href="tax-estimator.html#incomeInput">Next: Tax Estimator</a>
         </div>
         <div class="pfc-access-meta">Use this calculator separately for client-pay vs keep comparisons, or move forward with the pre-tax amount into tax planning.</div>
       </section>
@@ -7269,7 +7269,7 @@ function goNextPlatform(){
   if(window.UFCToolkit&&typeof window.UFCToolkit.setHandoff==='function'){
     window.UFCToolkit.setHandoff('platform_fee',buildPlatformToolkitPayload());
   }
-  window.location.href=TOOL_LINKS.tax + '#toolStart';
+  window.location.href=TOOL_LINKS.tax + '#incomeInput';
 }
 
 function goBackPlatform(){
@@ -7329,6 +7329,27 @@ function tryPlatformToolkitAutofill(){
   return false;
 }
 
+function applyGuidedFlowScroll(){
+  if(window.location.hash!=='#amtGross')return;
+  const target=$('amtGross');
+  if(!target)return;
+  const scrollToTarget=()=>{
+    const top=target.getBoundingClientRect().top+window.scrollY-18;
+    window.scrollTo(0,Math.max(0,top));
+  };
+  scrollToTarget();
+  if(typeof window.requestAnimationFrame==='function'){
+    window.requestAnimationFrame(()=>{
+      scrollToTarget();
+      window.requestAnimationFrame(scrollToTarget);
+    });
+  }
+  setTimeout(scrollToTarget,60);
+  setTimeout(scrollToTarget,180);
+  setTimeout(scrollToTarget,420);
+  setTimeout(scrollToTarget,900);
+}
+
 /* ══ INIT ══ */
 // First-time users: Clean Slate (all toggles OFF)
 // Returning users: Restores last session
@@ -7347,6 +7368,8 @@ document.querySelectorAll('#pfcApp .tk-pill').forEach(pill=>{
 
 /* ══ TOOLKIT AUTO-FILL ══ */
 tryPlatformToolkitAutofill();
+applyGuidedFlowScroll();
+window.addEventListener('load',applyGuidedFlowScroll,{once:true});
 
 })();
 </script>

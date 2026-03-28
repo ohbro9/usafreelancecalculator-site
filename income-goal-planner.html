@@ -2112,8 +2112,8 @@
         </div>
         <div class="tool-access-actions">
           <a class="btn btn-secondary" href="index.html#homeTools">Toolkit Home</a>
-          <a class="btn btn-secondary" href="tax-estimator.html#toolStart">Back: Tax Estimator</a>
-          <a class="btn btn-primary" href="budget-planner.html#toolStart">Next: Budget Planner</a>
+          <a class="btn btn-secondary" href="tax-estimator.html#incomeInput">Back: Tax Estimator</a>
+          <a class="btn btn-primary" href="budget-planner.html#income">Next: Budget Planner</a>
         </div>
         <div class="tool-access-meta">Direct use keeps the planner self-contained, while toolkit mode can still bring in gross context without replacing your goal automatically.</div>
       </section>
@@ -4524,7 +4524,7 @@
 	            return;
 	          }
 	        }
-	        window.location.href = 'budget-planner.html#toolStart';
+	        window.location.href = 'budget-planner.html#income';
 	      }
 
 	      function goBackToTaxTool() {
@@ -4532,8 +4532,29 @@
 	          const moved = window.UFCToolkit.goBack('income_goal');
 	          if (moved) return;
 	        }
-	        window.location.href = 'tax-estimator.html#toolStart';
+	        window.location.href = 'tax-estimator.html#incomeInput';
 	      }
+
+      function applyGuidedFlowScroll() {
+        if (window.location.hash !== '#incomeGoal') return;
+        const target = document.getElementById('incomeGoal');
+        if (!target) return;
+        const scrollToTarget = () => {
+          const top = target.getBoundingClientRect().top + window.scrollY - 18;
+          window.scrollTo(0, Math.max(0, top));
+        };
+        scrollToTarget();
+        if (typeof window.requestAnimationFrame === 'function') {
+          window.requestAnimationFrame(() => {
+            scrollToTarget();
+            window.requestAnimationFrame(scrollToTarget);
+          });
+        }
+        setTimeout(scrollToTarget, 60);
+        setTimeout(scrollToTarget, 180);
+        setTimeout(scrollToTarget, 420);
+        setTimeout(scrollToTarget, 900);
+      }
 
 	      function collectPersistedState() {
 	        return {
@@ -8249,12 +8270,14 @@
         setTimeout(() => { button.textContent = original; }, 1400);
       }
 
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init, { once: true });
-      } else {
-        init();
-      }
-    })();
+	      if (document.readyState === 'loading') {
+	        document.addEventListener('DOMContentLoaded', init, { once: true });
+	      } else {
+	        init();
+	      }
+        applyGuidedFlowScroll();
+        window.addEventListener('load', applyGuidedFlowScroll, { once: true });
+	    })();
   </script>
 </body>
 </html>

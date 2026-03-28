@@ -1297,8 +1297,8 @@
     </div>
     <div class="tool-access-actions">
       <a class="tool-access-link" href="index.html#homeTools">Toolkit Home</a>
-      <a class="tool-access-link" href="platform-fee-calculator.html#toolStart">Back: Platform Fees</a>
-      <a class="tool-access-link primary" href="income-goal-planner.html#toolStart">Next: Income Goal</a>
+      <a class="tool-access-link" href="platform-fee-calculator.html#amtGross">Back: Platform Fees</a>
+      <a class="tool-access-link primary" href="income-goal-planner.html#incomeGoal">Next: Income Goal</a>
     </div>
     <div class="tool-access-meta">Direct use works for standalone tax planning, while shared toolkit amounts can still auto-fill the income side when fresh data exists.</div>
   </section>
@@ -3498,7 +3498,7 @@ function goNextTool() {
     });
   }
   try { localStorage.setItem(TOOLKIT_KEY, JSON.stringify(payload)); } catch(e) {}
-  window.location.href = 'income-goal-planner.html#toolStart';
+  window.location.href = 'income-goal-planner.html#incomeGoal';
 }
 
 function goBackTool() {
@@ -3506,7 +3506,28 @@ function goBackTool() {
     const moved = window.UFCToolkit.goBack('tax_estimator');
     if (moved) return;
   }
-  window.location.href = 'platform-fee-calculator.html#toolStart';
+  window.location.href = 'platform-fee-calculator.html#amtGross';
+}
+
+function applyGuidedFlowScroll() {
+  if (window.location.hash !== '#incomeInput') return;
+  const target = document.getElementById('incomeInput');
+  if (!target) return;
+  const scrollToTarget = () => {
+    const top = target.getBoundingClientRect().top + window.scrollY - 18;
+    window.scrollTo(0, Math.max(0, top));
+  };
+  scrollToTarget();
+  if (typeof window.requestAnimationFrame === 'function') {
+    window.requestAnimationFrame(() => {
+      scrollToTarget();
+      window.requestAnimationFrame(scrollToTarget);
+    });
+  }
+  setTimeout(scrollToTarget, 60);
+  setTimeout(scrollToTarget, 180);
+  setTimeout(scrollToTarget, 420);
+  setTimeout(scrollToTarget, 900);
 }
 
 // ─── TOOLKIT IMPORT LOGIC ─────────────────────────────────────────────────
@@ -5430,6 +5451,10 @@ function downloadPDF() {
   });
 }
 
+</script>
+<script>
+applyGuidedFlowScroll();
+window.addEventListener('load', applyGuidedFlowScroll, { once: true });
 </script>
 </body>
 </html>

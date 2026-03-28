@@ -14,10 +14,10 @@
   ];
   var FLOW_HASH_BY_ID = {
     hourly_rate: '#mainCard',
-    platform_fee: '#toolStart',
-    tax_estimator: '#toolStart',
-    income_goal: '#toolStart',
-    budget_planner: '#toolStart'
+    platform_fee: '#amtGross',
+    tax_estimator: '#incomeInput',
+    income_goal: '#incomeGoal',
+    budget_planner: '#income'
   };
 
   var STEP_BY_ID = {};
@@ -120,10 +120,24 @@
     }
     if(!target || typeof target.scrollIntoView !== 'function')return;
     function forceScroll(){
-      try{target.scrollIntoView({ behavior:'auto', block:'start' });}catch(e){}
+      try{
+        var top = target.getBoundingClientRect().top + window.scrollY - 18;
+        window.scrollTo(0, Math.max(0, top));
+      }catch(e){
+        try{target.scrollIntoView({ behavior:'auto', block:'start' });}catch(err){}
+      }
     }
-    window.setTimeout(forceScroll, 80);
-    window.setTimeout(forceScroll, 320);
+    forceScroll();
+    if(typeof window.requestAnimationFrame === 'function'){
+      window.requestAnimationFrame(function(){
+        forceScroll();
+        window.requestAnimationFrame(forceScroll);
+      });
+    }
+    window.setTimeout(forceScroll, 60);
+    window.setTimeout(forceScroll, 180);
+    window.setTimeout(forceScroll, 420);
+    window.setTimeout(forceScroll, 900);
   }
 
   function sanitizePrimitiveMap(obj){

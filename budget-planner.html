@@ -4207,9 +4207,8 @@ function goBackToIncomeGoal() {
   window.location.href = 'income-goal-planner.html#goalInputCard';
 }
 
-function applyGuidedFlowScroll() {
-  if (window.location.hash !== '#budgetIncomeCard') return;
-  const target = document.getElementById('budgetIncomeCard');
+function scrollBudgetCardIntoView(cardId) {
+  const target = document.getElementById(cardId);
   if (!target) return;
   const scrollToTarget = () => {
     const top = target.getBoundingClientRect().top + window.scrollY - 18;
@@ -4226,6 +4225,28 @@ function applyGuidedFlowScroll() {
   setTimeout(scrollToTarget, 180);
   setTimeout(scrollToTarget, 420);
   setTimeout(scrollToTarget, 900);
+}
+
+function landOnBudgetToolkitStep() {
+  const importCard = document.getElementById('budgetToolkitCard');
+  if (budgetToolkitPendingImport && importCard && !importCard.classList.contains('is-hidden')) {
+    scrollBudgetCardIntoView('budgetToolkitCard');
+    return;
+  }
+  scrollBudgetCardIntoView('budgetIncomeCard');
+}
+
+function revealBudgetIncomeCard() {
+  const applyBtn = document.getElementById('budgetToolkitApplyBtn');
+  if (applyBtn && typeof applyBtn.blur === 'function') {
+    applyBtn.blur();
+  }
+  scrollBudgetCardIntoView('budgetIncomeCard');
+}
+
+function applyGuidedFlowScroll() {
+  if (window.location.hash !== '#budgetIncomeCard') return;
+  landOnBudgetToolkitStep();
 }
 
 function exportToolkitReport() {
@@ -4329,6 +4350,7 @@ function applyBudgetToolkitImport() {
   if (incomeEl) incomeEl.value = formatIncomeForView(pending.monthlyBase, pending.budgetView);
   save();
   compute();
+  revealBudgetIncomeCard();
   toast('Goal gross imported into Budget Planner.');
 }
 

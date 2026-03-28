@@ -4304,6 +4304,41 @@
 	        return Math.max(0, roundToolkitMoney(safeOwnerTakeHome / (1 + bufferPct)));
 	      }
 
+      function scrollGoalCardIntoView(cardId) {
+        const target = document.getElementById(cardId);
+        if (!target) return;
+        const scrollToTarget = () => {
+          const top = target.getBoundingClientRect().top + window.scrollY - 18;
+          window.scrollTo(0, Math.max(0, top));
+        };
+        scrollToTarget();
+        if (typeof window.requestAnimationFrame === 'function') {
+          window.requestAnimationFrame(() => {
+            scrollToTarget();
+            window.requestAnimationFrame(scrollToTarget);
+          });
+        }
+        setTimeout(scrollToTarget, 60);
+        setTimeout(scrollToTarget, 180);
+        setTimeout(scrollToTarget, 420);
+        setTimeout(scrollToTarget, 900);
+      }
+
+      function landOnGoalToolkitStep() {
+        if (state.toolkitPendingImport && ui.toolkitImportCard && !ui.toolkitImportCard.classList.contains('is-hidden')) {
+          scrollGoalCardIntoView('toolkitImportCard');
+          return;
+        }
+        scrollGoalCardIntoView('goalInputCard');
+      }
+
+      function revealGoalInputCard() {
+        if (ui.toolkitGoalBtn && typeof ui.toolkitGoalBtn.blur === 'function') {
+          ui.toolkitGoalBtn.blur();
+        }
+        scrollGoalCardIntoView('goalInputCard');
+      }
+
 	      function applyToolkitImportAsBaseline() {
 	        if (!state.toolkitPendingImport) return;
 	        const pending = state.toolkitPendingImport;
@@ -4375,6 +4410,7 @@
 	        state.toolkitPendingImport = null;
 	        markToolkitImportApplied(pending.updatedAt);
 	        requestRecalc();
+          revealGoalInputCard();
 	      }
 
 	      function dismissToolkitImport() {
@@ -4537,23 +4573,7 @@
 
       function applyGuidedFlowScroll() {
         if (window.location.hash !== '#goalInputCard') return;
-        const target = document.getElementById('goalInputCard');
-        if (!target) return;
-        const scrollToTarget = () => {
-          const top = target.getBoundingClientRect().top + window.scrollY - 18;
-          window.scrollTo(0, Math.max(0, top));
-        };
-        scrollToTarget();
-        if (typeof window.requestAnimationFrame === 'function') {
-          window.requestAnimationFrame(() => {
-            scrollToTarget();
-            window.requestAnimationFrame(scrollToTarget);
-          });
-        }
-        setTimeout(scrollToTarget, 60);
-        setTimeout(scrollToTarget, 180);
-        setTimeout(scrollToTarget, 420);
-        setTimeout(scrollToTarget, 900);
+        landOnGoalToolkitStep();
       }
 
 	      function collectPersistedState() {

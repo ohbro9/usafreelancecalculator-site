@@ -2112,8 +2112,8 @@
         </div>
         <div class="tool-access-actions">
           <a class="btn btn-secondary" href="index.html#homeTools">Toolkit Home</a>
-          <a class="btn btn-secondary" href="tax-estimator.html#incomeInput">Back: Tax Estimator</a>
-          <a class="btn btn-primary" href="budget-planner.html#income">Next: Budget Planner</a>
+          <a class="btn btn-secondary" href="tax-estimator.html#incomeSetupCard">Back: Tax Estimator</a>
+          <a class="btn btn-primary" href="budget-planner.html#budgetIncomeCard">Next: Budget Planner</a>
         </div>
         <div class="tool-access-meta">Direct use keeps the planner self-contained, while toolkit mode can still bring in gross context without replacing your goal automatically.</div>
       </section>
@@ -2177,7 +2177,7 @@
       <!-- CORE INPUTS -->
       <section class="primary-zone">
 
-        <article class="card card--primary card-income-goal">
+        <article class="card card--primary card-income-goal" id="goalInputCard">
           <div class="card-head">
             <h2 class="card-title">🎯 Income Goal</h2>
           </div>
@@ -4524,7 +4524,7 @@
 	            return;
 	          }
 	        }
-	        window.location.href = 'budget-planner.html#income';
+	        window.location.href = 'budget-planner.html#budgetIncomeCard';
 	      }
 
 	      function goBackToTaxTool() {
@@ -4532,12 +4532,12 @@
 	          const moved = window.UFCToolkit.goBack('income_goal');
 	          if (moved) return;
 	        }
-	        window.location.href = 'tax-estimator.html#incomeInput';
+	        window.location.href = 'tax-estimator.html#incomeSetupCard';
 	      }
 
       function applyGuidedFlowScroll() {
-        if (window.location.hash !== '#incomeGoal') return;
-        const target = document.getElementById('incomeGoal');
+        if (window.location.hash !== '#goalInputCard') return;
+        const target = document.getElementById('goalInputCard');
         if (!target) return;
         const scrollToTarget = () => {
           const top = target.getBoundingClientRect().top + window.scrollY - 18;

@@ -1297,8 +1297,8 @@
     </div>
     <div class="tool-access-actions">
       <a class="tool-access-link" href="index.html#homeTools">Toolkit Home</a>
-      <a class="tool-access-link" href="platform-fee-calculator.html#amtGross">Back: Platform Fees</a>
-      <a class="tool-access-link primary" href="income-goal-planner.html#incomeGoal">Next: Income Goal</a>
+      <a class="tool-access-link" href="platform-fee-calculator.html#amountSetupCard">Back: Platform Fees</a>
+      <a class="tool-access-link primary" href="income-goal-planner.html#goalInputCard">Next: Income Goal</a>
     </div>
     <div class="tool-access-meta">Direct use works for standalone tax planning, while shared toolkit amounts can still auto-fill the income side when fresh data exists.</div>
   </section>
@@ -1308,7 +1308,7 @@
     <div class="desktop-left">
 
   <!-- INPUTS CARD -->
-  <div class="card">
+  <div class="card" id="incomeSetupCard">
     <div class="card-label">📊 Your Income</div>
     <div class="toggle-row">
       <div class="toggle-pill">
@@ -3498,7 +3498,7 @@ function goNextTool() {
     });
   }
   try { localStorage.setItem(TOOLKIT_KEY, JSON.stringify(payload)); } catch(e) {}
-  window.location.href = 'income-goal-planner.html#incomeGoal';
+  window.location.href = 'income-goal-planner.html#goalInputCard';
 }
 
 function goBackTool() {
@@ -3506,12 +3506,12 @@ function goBackTool() {
     const moved = window.UFCToolkit.goBack('tax_estimator');
     if (moved) return;
   }
-  window.location.href = 'platform-fee-calculator.html#amtGross';
+  window.location.href = 'platform-fee-calculator.html#amountSetupCard';
 }
 
 function applyGuidedFlowScroll() {
-  if (window.location.hash !== '#incomeInput') return;
-  const target = document.getElementById('incomeInput');
+  if (window.location.hash !== '#incomeSetupCard') return;
+  const target = document.getElementById('incomeSetupCard');
   if (!target) return;
   const scrollToTarget = () => {
     const top = target.getBoundingClientRect().top + window.scrollY - 18;

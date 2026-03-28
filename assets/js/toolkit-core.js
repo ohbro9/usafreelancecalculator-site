@@ -14,10 +14,10 @@
   ];
   var FLOW_HASH_BY_ID = {
     hourly_rate: '#mainCard',
-    platform_fee: '#amtGross',
-    tax_estimator: '#incomeInput',
-    income_goal: '#incomeGoal',
-    budget_planner: '#income'
+    platform_fee: '#amountSetupCard',
+    tax_estimator: '#incomeSetupCard',
+    income_goal: '#goalInputCard',
+    budget_planner: '#budgetIncomeCard'
   };
 
   var STEP_BY_ID = {};

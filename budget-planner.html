@@ -2322,7 +2322,7 @@
     <p class="tool-access-copy">Budget Planner works as a standalone budgeting tool, but it also serves as the final sink for the connected toolkit after Goal Planner hands off a gross target.</p>
     <div class="tool-access-actions">
       <a class="tool-access-link" href="index.html#homeTools">Toolkit Home</a>
-      <a class="tool-access-link" href="income-goal-planner.html#incomeGoal">Back: Income Goal</a>
+      <a class="tool-access-link" href="income-goal-planner.html#goalInputCard">Back: Income Goal</a>
       <a class="tool-access-link primary" href="hourly-rate-calculator.html#mainCard">Start at Hourly</a>
     </div>
     <div class="tool-access-meta">Come here directly for budget control, or use it as the last step after rate, fee, tax, and goal planning are already connected.</div>
@@ -2373,7 +2373,7 @@
   </div>
 
   <!-- ── INCOME & SETTINGS ── -->
-  <div class="card card-income">
+  <div class="card card-income" id="budgetIncomeCard">
     <div class="section-title"><span class="icon">💵</span> Income & Settings</div>
 
     <!-- U3: Monthly / Annual view toggle -->
@@ -4204,12 +4204,12 @@ function goBackToIncomeGoal() {
     const moved = window.UFCToolkit.goBack('budget_planner');
     if (moved) return;
   }
-  window.location.href = 'income-goal-planner.html#incomeGoal';
+  window.location.href = 'income-goal-planner.html#goalInputCard';
 }
 
 function applyGuidedFlowScroll() {
-  if (window.location.hash !== '#income') return;
-  const target = document.getElementById('income');
+  if (window.location.hash !== '#budgetIncomeCard') return;
+  const target = document.getElementById('budgetIncomeCard');
   if (!target) return;
   const scrollToTarget = () => {
     const top = target.getBoundingClientRect().top + window.scrollY - 18;

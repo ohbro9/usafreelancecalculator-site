@@ -2132,7 +2132,7 @@
         <div class="pfc-access-actions">
           <a class="pfc-access-link" href="index.html#homeTools">Toolkit Home</a>
           <a class="pfc-access-link" href="hourly-rate-calculator.html#mainCard">Open Hourly Start</a>
-          <a class="pfc-access-link primary" href="tax-estimator.html#incomeInput">Next: Tax Estimator</a>
+          <a class="pfc-access-link primary" href="tax-estimator.html#incomeSetupCard">Next: Tax Estimator</a>
         </div>
         <div class="pfc-access-meta">Use this calculator separately for client-pay vs keep comparisons, or move forward with the pre-tax amount into tax planning.</div>
       </section>
@@ -2180,7 +2180,7 @@
       <div class="pfc-main-grid">
 
         <!-- ── LEFT: INPUT CARD ── -->
-        <div class="pfc-card pfc-input-card">
+        <div class="pfc-card pfc-input-card" id="amountSetupCard">
           <div class="pfc-card-head">
             <div>
               <div class="pfc-eyebrow" style="color:var(--pfc-muted2);">Primary Setup</div>
@@ -7269,7 +7269,7 @@ function goNextPlatform(){
   if(window.UFCToolkit&&typeof window.UFCToolkit.setHandoff==='function'){
     window.UFCToolkit.setHandoff('platform_fee',buildPlatformToolkitPayload());
   }
-  window.location.href=TOOL_LINKS.tax + '#incomeInput';
+  window.location.href=TOOL_LINKS.tax + '#incomeSetupCard';
 }
 
 function goBackPlatform(){
@@ -7330,8 +7330,8 @@ function tryPlatformToolkitAutofill(){
 }
 
 function applyGuidedFlowScroll(){
-  if(window.location.hash!=='#amtGross')return;
-  const target=$('amtGross');
+  if(window.location.hash!=='#amountSetupCard')return;
+  const target=$('amountSetupCard');
   if(!target)return;
   const scrollToTarget=()=>{
     const top=target.getBoundingClientRect().top+window.scrollY-18;

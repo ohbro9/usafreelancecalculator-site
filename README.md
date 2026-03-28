@@ -7,7 +7,7 @@ QA reports, and working docs are maintained outside the public Pages path.
 
 ## Live Structure
 
-- `/` -> Hourly Rate Calculator
+- `/` -> Toolkit homepage and Hourly Rate start point
 - `/platform-fee-calculator.html` -> Platform Fee Calculator
 - `/tax-estimator.html` -> Tax Estimator
 - `/income-goal-planner.html` -> Income Goal Planner
@@ -21,6 +21,7 @@ QA reports, and working docs are maintained outside the public Pages path.
 - `income-goal-planner.html`
 - `budget-planner.html`
 - `assets/js/toolkit-core.js`
+- `CNAME`
 - `robots.txt`
 - `sitemap.xml`
 
@@ -30,7 +31,7 @@ This repo is designed for GitHub Pages with no build step.
 
 1. Push the repository to GitHub.
 2. Enable GitHub Pages from the default branch root.
-3. When the custom domain is ready, add a `CNAME` file with `usafreelancecalculator.com`.
+3. Custom domain target: `usafreelancecalculator.com` with `CNAME` committed at repo root.
 4. Update any future OG image assets if social share images are added later.
 
 ## Local Preview

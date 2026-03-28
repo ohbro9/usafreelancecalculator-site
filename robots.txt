@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ohbro9.github.io/usafreelancecalculator-site/sitemap.xml
+Sitemap: https://usafreelancecalculator.com/sitemap.xml

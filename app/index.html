@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>USA Freelance Calculator Android App</title>
+  <meta name="description" content="Download the official USA Freelance Calculator Android APK. View the current version, package id, checksum, and update details." />
+  <link rel="canonical" href="https://usafreelancecalculator.com/app/" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <style>
+    :root {
+      --bg: #071224;
+      --panel: #0d1a30;
+      --panel-soft: #12233f;
+      --text: #f8fafc;
+      --muted: #b8c4d6;
+      --line: rgba(201, 168, 76, 0.18);
+      --gold: #c9a84c;
+      --accent: #ffb020;
+      --shadow: 0 28px 60px rgba(2, 6, 23, 0.24);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(201, 168, 76, 0.10), transparent 28%),
+        linear-gradient(180deg, #071224 0%, #0e1c33 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0 64px;
+    }
+
+    .hero {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(201, 168, 76, 0.10), transparent 24%),
+        linear-gradient(180deg, rgba(9, 18, 33, 0.98) 0%, rgba(14, 28, 51, 0.96) 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(201, 168, 76, 0.92);
+    }
+
+    h1 {
+      margin: 0;
+      font: 800 clamp(36px, 6vw, 64px)/0.98 Georgia, serif;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-copy {
+      margin: 18px 0 0;
+      max-width: 760px;
+      font-size: clamp(17px, 2.8vw, 22px);
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 0 24px;
+      border-radius: 18px;
+      font-size: 16px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .btn:active { transform: scale(0.985); }
+
+    .btn-primary {
+      color: #14110a;
+      background: linear-gradient(180deg, #ffc24b 0%, #ffad1f 100%);
+      box-shadow: 0 18px 40px rgba(255, 176, 32, 0.26);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(148, 163, 184, 0.16);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .card {
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      border-radius: 24px;
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 18px 36px rgba(2, 6, 23, 0.12);
+    }
+
+    .card-label {
+      margin: 0 0 8px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(201, 168, 76, 0.78);
+    }
+
+    .card-value {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .card-copy {
+      margin: 8px 0 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+      word-break: break-word;
+    }
+
+    .notes {
+      margin-top: 24px;
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .notes h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .notes ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .footer {
+      margin-top: 18px;
+      color: rgba(184, 196, 214, 0.82);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 780px) {
+      .wrap {
+        width: min(100% - 20px, 760px);
+        padding-top: 16px;
+      }
+
+      .hero {
+        padding: 22px 18px;
+        border-radius: 22px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Official Android App</p>
+      <h1>USA Freelance Calculator APK</h1>
+      <p class="hero-copy">
+        Download the official Android app for the USA Freelance Calculator toolkit.
+        This direct APK path is for website installs. Play Store rollout can be added later without disturbing the main toolkit site.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/downloads/usafreelancecalculator-installable.apk" download>Download Android APK</a>
+        <a class="btn btn-secondary" href="https://usafreelancecalculator.com/">Open Main Toolkit</a>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <p class="card-label">Current Version</p>
+          <p class="card-value">1.0 (Build 1)</p>
+          <p class="card-copy">Package: <strong>com.usafreelancecalculator.toolkit</strong></p>
+        </article>
+        <article class="card">
+          <p class="card-label">APK Details</p>
+          <p class="card-value">4.90 MB</p>
+          <p class="card-copy">Published: <strong>April 3, 2026</strong></p>
+        </article>
+        <article class="card">
+          <p class="card-label">SHA-256</p>
+          <p class="card-copy">4df6412dd136c3620a4ad713158fa3f6147ced694a9ddc5d7f2384e5bf6530d9</p>
+        </article>
+        <article class="card">
+          <p class="card-label">Update Delivery</p>
+          <p class="card-copy">The app checks <strong>/app/update-config.json</strong> for new versions and can direct users back here for the latest APK.</p>
+        </article>
+      </div>
+
+      <section class="notes">
+        <h2>What this page is for</h2>
+        <ul>
+          <li>Direct website APK installs for Android users.</li>
+          <li>Future in-app update checks and manual APK update flow.</li>
+          <li>Safe separation from the main toolkit calculators and core website pages.</li>
+          <li>Play Store can be added later as a second distribution channel.</li>
+        </ul>
+      </section>
+
+      <p class="footer">
+        If Android asks for install permission, allow installs from your browser or file manager first.
+        Users who already installed an older APK can install the latest APK over the existing app as long as the signing key stays the same.
+      </p>
+    </section>
+  </main>
+</body>
+</html>

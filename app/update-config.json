@@ -1,0 +1,18 @@
+{
+  "latestVersionCode": 1,
+  "latestVersionName": "1.0",
+  "minimumSupportedVersionCode": 1,
+  "forceUpdate": false,
+  "downloadUrl": "https://usafreelancecalculator.com/downloads/usafreelancecalculator-installable.apk",
+  "promptTitle": "New version available",
+  "forceUpdateTitle": "Critical update required",
+  "promptMessage": "Install the latest APK to stay current with toolkit improvements, export fixes, and yearly tax-rule updates.",
+  "forceUpdateMessage": "This version is below the supported minimum. Install the latest APK before continuing to use the toolkit.",
+  "publishedAt": "2026-04-03",
+  "releaseNotes": [
+    "Initial Android toolkit release",
+    "In-app update checker and app info panel",
+    "Export activity, saved files, and bell notification improvements",
+    "Push-notification foundation for future update and tax alerts"
+  ]
+}

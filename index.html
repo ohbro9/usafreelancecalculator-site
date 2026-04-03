@@ -923,6 +923,7 @@
         .toolkit-pill{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--chip-bg);font-size:12px;font-weight:700;color:var(--muted);cursor:pointer;text-decoration:none;user-select:none;white-space:nowrap;-webkit-tap-highlight-color:transparent;transition:all .18s}
         .toolkit-pill.active{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent;color:#fff;box-shadow:0 4px 14px rgba(255,106,0,.25)}
         .toolkit-pill:focus-visible{outline:2px solid var(--accent2);outline-offset:2px;border-color:var(--accent2)}
+        .toolkit-pill.app-pill{background:rgba(37,99,235,.08);border-color:rgba(37,99,235,.18);color:#1d4ed8}
         .pill-icon{font-size:13px;line-height:1}
 
         /* PUBLIC HOMEPAGE */
@@ -1005,6 +1006,11 @@
             color:var(--text);
             border:1px solid var(--line);
             background:rgba(255,255,255,.86);
+        }
+        .home-cta.app{
+            color:#fff;
+            background:linear-gradient(135deg,#1d4ed8,#2563eb);
+            box-shadow:0 16px 32px rgba(37,99,235,.18);
         }
         .home-pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
         .home-pill{
@@ -1518,6 +1524,7 @@
             <a class="toolkit-pill" href="tax-estimator.html"><span class="pill-icon">🏛️</span> Tax Estimator</a>
             <a class="toolkit-pill" href="income-goal-planner.html"><span class="pill-icon">🎯</span> Goal Planner</a>
             <a class="toolkit-pill" href="budget-planner.html"><span class="pill-icon">📊</span> Budget Planner</a>
+            <a class="toolkit-pill app-pill" href="app/"><span class="pill-icon">📱</span> Android App</a>
         </div>
     </div>
 </div>
@@ -1533,6 +1540,7 @@
                 <p class="home-sub">Use each tool separately or move through one connected workflow. Start with the hourly calculator below, or jump directly into the exact tool you need.</p>
                 <div class="home-cta-row">
                     <a class="home-cta primary" href="hourly-rate-calculator.html">Start with Hourly Rate</a>
+                    <a class="home-cta app" href="downloads/usafreelancecalculator-installable.apk" download>Download Android App</a>
                     <a class="home-cta secondary" href="#homeTools">See All 5 Tools</a>
                 </div>
                 <div class="home-pill-row">
@@ -2220,6 +2228,7 @@ You can set goals per year, month, or week.">What's this?</button>
             <div class="site-footer-group">
                 <div class="site-footer-group-label">Info</div>
                 <div class="site-footer-legal-links" aria-label="Legal and info links">
+                    <a href="app/">Android App</a>
                     <a href="about.html">About</a>
                     <a href="privacy.html">Privacy</a>
                     <a href="terms.html">Terms</a>

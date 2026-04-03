@@ -575,6 +575,24 @@
   border-radius:6px;
 }
 
+.legal-email-link--split{
+  display:inline-flex !important;
+  flex-wrap:wrap;
+  gap:0;
+  max-width:100%;
+  align-items:baseline;
+  line-height:1.24;
+  font-size:clamp(15px, 4vw, 18px);
+  letter-spacing:-.02em;
+  overflow-wrap:normal !important;
+  word-break:normal !important;
+}
+
+.legal-email-link--split span{
+  display:inline-block;
+  white-space:nowrap;
+}
+
 .legal-grid{
   display:grid;
   grid-template-columns:repeat(2, minmax(0,1fr));
